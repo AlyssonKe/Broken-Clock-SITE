@@ -17,9 +17,7 @@ module.exports = {
       'gray': '#676767',
       'button-gray': '#828282',
 
-      'community-blue': '#001E23A6',
-
-      'transparent': 'rgba(0, 0, 0, 0)'
+      'community-blue': '#001E23A6'
     },
 
     extend: {
@@ -40,10 +38,8 @@ module.exports = {
 
         // Games
         'john-and-mark': "url('../public/images/games/john-and-mark.png')",
-        'treacherous-tower': "url('../public/images/games/treacherous-tower.jpg')",
-        'frog': "url('../public/images/games/frog.png')",
+        'treacherous-tower': "url('../public/images/games/treacherous-tower.png')",
         'never-die': "url('../public/images/games/never-die.png')",
-        'defend-the-crystal': "url('../public/images/games/defend-the-crystal.png')",
 
         // Logos
         'bc-logo': "url('../public/images/broken-clock-logo.png')",
@@ -55,9 +51,6 @@ module.exports = {
 
         // Community
         'john-and-mark-parallax': "url('../public/images/john-and-mark-parallax.png')",
-
-        // Others
-        'menu-button': "url('../public/images/menu-button.svg')",
       },
 
       transitionProperty: {
