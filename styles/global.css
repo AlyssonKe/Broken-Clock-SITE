@@ -1,0 +1,37 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+:root {
+	--bg-primary: #0c151b;
+    --header-color: #0D0D0D;
+	--footer-color: #0D0D0D;
+	
+    /* texts */
+    --text-blue: #009DFF;
+    --header-text-light: #F4F5F7;
+    --text-description: #DFE1E6;
+    --title-light: #FFFFFF;
+    --title-dark: #14242E;
+
+	--button: #0089F;
+	--line: #CEF6FE;
+}
+
+body {
+	background: var(--bg-primary);
+}
+
+.clear {
+	clear: both;
+}
