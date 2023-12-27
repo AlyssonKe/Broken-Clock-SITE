@@ -40,13 +40,15 @@ export async function getStaticProps() {
   }
 
 export default function Home ({ posts }) {
-	const [workerName, setWorkerName] = useState()
-	const [workerRole, setWorkerRole] = useState()
-	const [workerDescription, setWorkerDescription] = useState()
+	const [workerName, setWorkerName] = useState(null)
+	const [workerRole, setWorkerRole] = useState(null)
+	const [workerDescription, setWorkerDescription] = useState(null)
 	const [workerRobloxCharacter, setWorkerRobloxCharacter] = useState()
-	const [workerSocialMedia, setWorkerSocialMedia] = useState();
+	const [workerSocialMedia, setWorkerSocialMedia] = useState(null);
 
-	const [selectedPost, setSelectedPost] = useState();
+	const [selectedPost, setSelectedPost] = useState(null);
+
+    const [workerInformationVisible, setWorkerInformationVisible] = useState(false);
 
 	function changeWorker(worker) {
 		console.log(worker)
@@ -81,6 +83,8 @@ export default function Home ({ posts }) {
 		} else {
 			console.log(`Social media não encontrado no item`);
 		}
+
+        toggleWorkerInformation()
 	}
 
 	const renderSocialIcon = (platform, url) => {
@@ -125,6 +129,12 @@ export default function Home ({ posts }) {
 		};
 		return iconPaths[platform];
 	 };
+
+     
+
+     const toggleWorkerInformation = () => {
+        setWorkerInformationVisible(!workerInformationVisible);
+     };
 
 	// const renderSocialIcon = (platform, url) => {
 	// 	console.log(platform, url)
@@ -179,7 +189,7 @@ export default function Home ({ posts }) {
     return (
         <div>
             {/* Home */}
-            <div className='relative -mt-20 bg-principal h-[calc(100vh+1rem)] max-h-[1024px] min-h-[600px] before:bg-john-and-mark before:bg-cover before:bg-center before:bg-no-repeat before:absolute before:w-full before:h-full before:blur-sm before:-z-10'>
+            <div className='relative -mt-20 bg-principal h-[calc(100vh+1rem)] max-h-[1024px] min-h-[600px] before:bg-john-and-mark-bg before:bg-cover before:bg-center before:bg-no-repeat before:absolute before:w-full before:h-full before:blur-sm before:-z-10'>
                 <div className='bg-home-shadow bg-cover bg-center bg-no-repeat h-full w-full'>
                     {/* Background */}
                     
@@ -344,24 +354,24 @@ export default function Home ({ posts }) {
 				</div>
 			</div>
 
-            {/* Team */}
-            <div className='bg-primary'>
+			 {/* Team */}
+			 <div className='relative bg-primary'>
 				<div className='w-10/12 mx-auto py-24'>
 					<div className="pb-10">
 						<h1 className="uppercase text-secundary font-black text-5xl pb-2">The Team</h1>
 						<h2 className="text-gray font-bold text-2xl">Get to know us!</h2>
 					</div>
 
-                    <div className="w-full h-fit flex">
-                        <div className='w-1/2 h-fit flex flex-wrap'>
+                    <div className="w-full h-fit sm:flex">
+                        <div className='w-full h-fit flex flex-wrap sm:w-1/2 sm:min-h-0'>
                             {/* John and Mark */}
-							{posts.map((post) => (
-								<div className="h-40 w-40 m-4" key={post.frontMatter.title}>
-									<button onClick={() => changeWorker(post.frontMatter)} className={`absolute bg-primary w-40 h-40 rounded-xl overflow-hidden shadow-games ${selectedPost === post.frontMatter.title ? 'outline outline-4 outline-main-blue' : ''}`} key={post.frontMatter.title}>
+							{[...posts].sort((a, b) => a.frontMatter.order - b.frontMatter.order).map((post) => (
+								<div className="w-32 h-32 sm:h-40 m-4 sm:w-40" key={post.frontMatter.title}>
+									<button onClick={() => changeWorker(post.frontMatter)} className={`absolute bg-primary w-32 h-32 rounded-xl overflow-hidden shadow-games sm:w-40 sm:h-40 ${selectedPost === post.frontMatter.title ? 'sm:outline outline-4 sm:outline-main-blue' : ''}`} key={post.frontMatter.title}>
 										{/* ... restante do seu código ... */}
 										<div className="block relative w-full h-full bg-secundary-white overflow-hidden">
 											{/* Worker cover */}
-											<div className='bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110'>
+											<div className='bg-cover bg-no-repeat bg-center duration-300 h-full'>
 												<img src={post.frontMatter.thumbnail} alt="Cover Image" className="w-full h-full" />
 												<div className="absolute right-0 w-full h-full z-10 -translate-y-3/4 translate-x-1/4">
 													<img src={post.frontMatter["roblox-character"]}></img>
@@ -371,7 +381,7 @@ export default function Home ({ posts }) {
 										</div>
 										
 										<div className="absolute flex bottom-0 w-full h-fit before:absolute before:w-full before:h-full before:bg-secundary before:opacity-50 before:-z-10 z-10">
-											<h3 className={`text-center text-xl font-bold my-3 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis ${selectedPost === post.frontMatter.title ? 'text-main-blue' : 'text-white'}`} key={post.frontMatter.title}>
+											<h3 className={`text-center text-xl font-bold my-3 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis ${selectedPost === post.frontMatter.title ? 'text-white sm:text-main-blue' : 'text-white'}`} key={post.frontMatter.title}>
 												{post.frontMatter.title}
 											</h3>
 											{/* <h3 className={`text-white text-center text-xl font-bold my-3 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis ${selectedPost === post.frontMatter.title ? 'text-main-blue' : ''}`} key={post.frontMatter.title}>{post.frontMatter.title}</h3> */}
@@ -381,39 +391,39 @@ export default function Home ({ posts }) {
                             ))}
                         </div>
                         
-                        <div className='w-1/2 h-fit relative z-10'>
-                            {/* <img src="https://tr.rbxcdn.com/30DAY-Avatar-BA63E2E2CC0F2412C74859D2011F5E19-Png/352/352/Avatar/Png/noFilter" alt="Cover Image" className="object-cover w-48 h-96" /> */}
-                            <div className="block w-64 h-64 absolute -z-10">
-								<img
-									src={workerRobloxCharacter}
-									className={`object-cover object-center w-full ${
-										workerRobloxCharacter ?
-										  'block'
-										  : 'hidden'
-									  }`}
-								/>
-							</div>
+                        <div className={`absolute w-full h-full left-0 top-0 z-10 before:absolute before:h-full before:w-full before:bg-secundary before:opacity-50 before:-z-10 sm:before:hidden sm:w-1/2 sm:relative sm:h-fit sm:block ${workerInformationVisible ? 'hidden' : 'block'}`}>
+                            <div className="absolute bg-primary w-1/2 mx-auto right-0 left-0 top-1/2 -translate-y-1/2 p-6 rounded-xl min-w-[250px] sm:min-w-0 sm:relative sm:w-full sm-p-0 sm:right-auto sm:left-auto sm:mx-0 sm:translate-y-0 sm:top-0 sm:bg-transparent">
+                                <button onClick={ toggleWorkerInformation } className="h-16 w-16 absolute right-0 top-0 text-4xl font-bold text-secundary sm:hidden">X</button>
+                                <div className="block w-full h-64 -z-10 mx-auto sm:h-96 sm:w-64 sm:absolute">
+									<img
+										src={workerRobloxCharacter}
+										className={`object-cover object-center w-full ${
+											workerRobloxCharacter ?
+											'block'
+											: 'hidden'
+										}`}
+									/>
+                                </div>
 
-							<div className="relative w-full mt-72 z-50 flex">
-                                <h1 className="text-secundary text-left text-3xl font-black inline w-1/2 overflow-hidden whitespace-nowrap text-ellipsis">{workerName}</h1>
-								{/* <img src={workerFlag} className="object-contain rounded-xl w-14 h-full ml-6 mt-1"></img> */}
+                                <div className="relative w-full z-50 sm:mt-80 lg:flex lg:flex-row-reverse">
+                                    <ul className='w-full h-fit flex flex-row-reverse gap-2 right-0 lg:w-1/2'>
+                                        {validPlatforms.map(platform => (
+                                            workerSocialMedia && workerSocialMedia[platform] && (
+                                                <li key={platform} className='h-10 w-10 p-1 mt-2 hover:outline-main-blue hover:duration-200'>
+                                                    {renderSocialIcon(platform, workerSocialMedia[platform])}
+                                                </li>
+                                            )
+                                        ))}
+                                    </ul>
 
-								{/* Social media */}
+                                    <h1 className="text-secundary text-left text-3xl font-black block w-full py-2 lg:w-1/2 sm:overflow-hidden lg:whitespace-nowrap lg:text-ellipsis lg:inline">{workerName}</h1>
 
-								<ul className='absolute w-1/2 h-fit flex flex-row-reverse gap-2 right-0'>
-									{validPlatforms.map(platform => (
-										workerSocialMedia && workerSocialMedia[platform] && (
-											<li key={platform} className='h-10 w-10 p-1 min-[400px]:h-10 min-[400px]:w-10 hover:outline-main-blue hover:duration-200'>
-												{renderSocialIcon(platform, workerSocialMedia[platform])}
-											</li>
-										)
-									))}
-								</ul>
-							</div>
+                                </div>
 
-							{/* <div className={`w-full h-[1px] bg-secundary my-2 ${selectedPost !== null ? 'block' : 'hidden'}`}></div> */}
-							<h3 className="text-gray text-left text-xl font-bold italic">{workerRole}</h3>
-							<h3 className="text-secundary text-left text-xl mt-6">{workerDescription}</h3>
+                                <div className={`w-full h-[2px] bg-secundary my-2 ${selectedPost !== null ? 'block' : 'hidden'}`}></div>
+                                <h3 className="text-gray text-left text-xl font-bold italic">{workerRole}</h3>
+                                <h3 className="text-secundary text-left text-xl mt-4">{workerDescription}</h3>
+                            </div>
                         </div>
                     </div>
 				</div>

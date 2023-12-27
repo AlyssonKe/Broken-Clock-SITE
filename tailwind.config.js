@@ -48,6 +48,7 @@ module.exports = {
 
         // Home
         'john-and-mark-logo-name': "url('../public/images/home/john-and-mark-logo-name.png')",
+        'john-and-mark-bg': "url('../public/images/home/john-and-mark-bg.png')",
 
         // Community
         'john-and-mark-parallax': "url('../public/images/john-and-mark-parallax.png')",
