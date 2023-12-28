@@ -1,5 +1,6 @@
 import SocialMedia from "../components/social-media";
 import Plataforms from "../components/plataforms";
+import PlayersOnline from "../components/players-online"
 
 import fs from 'fs';
 import path from "path";
@@ -187,9 +188,9 @@ export default function Home ({ posts }) {
 	// 	};
 
     return (
-        <div>
+        <div className="bg-secundary bg-opacity-40">
             {/* Home */}
-            <div className='relative -mt-20 bg-principal h-[calc(100vh+1rem)] max-h-[1024px] min-h-[600px] before:bg-john-and-mark-bg before:bg-cover before:bg-center before:bg-no-repeat before:absolute before:w-full before:h-full before:blur-sm before:-z-10'>
+            <div className='relative -mt-20 bg-principal h-[calc(100vh)] max-h-[1024px] min-h-[600px] before:bg-john-and-mark-bg before:bg-cover before:bg-center before:bg-no-repeat before:absolute before:w-full before:h-full before:blur-sm before:-z-10'>
                 <div className='bg-home-shadow bg-cover bg-center bg-no-repeat h-full w-full'>
                     {/* Background */}
                     
@@ -217,7 +218,9 @@ export default function Home ({ posts }) {
                         </div>
                     </div>
 
-                    <SocialMedia />
+					<div className="hidden sm:block">
+                    	<SocialMedia />
+					</div>
                     
                     <div className='absolute w-fit h-4 bottom-0 right-0 left-0 mx-auto gap-0 space-x-4 flex items-center flex-row mb-6 sm:'>
                         <button className='bg-main-blue aspect-square h-full rounded-full'></button>
@@ -231,7 +234,7 @@ export default function Home ({ posts }) {
             <div className='bg-primary'>
 				<div className='w-10/12 mx-auto py-24'>
 					<div className='relative w-full h-fit duration-200 mx-auto mt-15'>
-						{/* <a href='https://www.roblox.com/groups/4756258/Broken-Clock' target="_blank" className='relative h-48 w-96 block bg-bc-logo-name-black bg-contain bg-center bg-no-repeat left-0 right-0 mx-auto'></a> */}
+						<a href='https://www.roblox.com/groups/4756258/Broken-Clock' target="_blank" className='relative h-48 w-full block bg-bc-logo-name-black bg-contain bg-center bg-no-repeat left-0 right-0 mx-auto sm:w-96'></a>
 
 						<h1 className="font-black text-5xl text-center text-secundary uppercase mt-4">
 							Who we are
@@ -250,6 +253,7 @@ export default function Home ({ posts }) {
 			</div>
 
             {/* Games */}
+			<span id='games'></span>
             <div className='bg-secundary-white'>
 				<div className='w-10/12 mx-auto py-24'>
 					<div className="pb-10">
@@ -262,9 +266,9 @@ export default function Home ({ posts }) {
 						<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 2xl:w-1/3 max-w-2xl">
 							<div className="bg-primary w-full h-full rounded-xl overflow-hidden shadow-games">
 								<a href="https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark-STORY" target="_blank" className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
-									{/* Plataforms */}
-									<div className="absolute bottom-0 flex mb-4 ml-6 z-10 pointer-events-none">
-										<Plataforms desktop={true} mobile={true} console={true} />
+									{/* Players online */}
+									<div className="w-24 absolute bottom-0 flex mb-2 ml-4 z-10 pointer-events-none text-white text-lg">
+										<PlayersOnline universeId={4884396315} />
 									</div>
 
 									{/* Year */}
@@ -293,9 +297,9 @@ export default function Home ({ posts }) {
 						<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 2xl:w-1/3 max-w-2xl">
 							<div className="bg-primary w-full h-full rounded-xl overflow-hidden shadow-games">
 								<a href="https://www.roblox.com/games/4237861040/Treacherous-Tower" target="_blank" className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
-									{/* Plataforms */}
-									<div className="absolute bottom-0 flex pb-4 pl-6 pointer-events-none z-10">
-										<Plataforms desktop={true} mobile={true} console={true} />
+									{/* Players online */}
+									<div className="w-24 absolute bottom-0 flex mb-2 ml-4 z-10 pointer-events-none text-white text-lg">
+										<PlayersOnline universeId={1383164929} />
 									</div>
 
 									{/* Year */}
@@ -324,11 +328,6 @@ export default function Home ({ posts }) {
 						<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 lg:w-1/3 max-w-2xl">
 							<div className="bg-primary w-full h-full rounded-xl overflow-hidden shadow-games">
 								<a className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
-									{/* Plataforms */}
-									<div className="absolute bottom-0 flex pb-4 pl-6 pointer-events-none z-10">
-										<Plataforms desktop={true} mobile={true} console={true} />
-									</div>
-
 									{/* Year */}
 									<div className='absolute right-0 bottom-0 duration-200 bg-main-orange w-fit mr-6 mb-4 rounded-full flex items-center z-10 pointer-events-none'>
 										<p className='uppercase mx-auto text-base text-white text-center font-bold px-4 py-1'>2024</p>
@@ -391,7 +390,7 @@ export default function Home ({ posts }) {
                             ))}
                         </div>
                         
-                        <div className={`absolute w-full h-full left-0 top-0 z-10 before:absolute before:h-full before:w-full before:bg-secundary before:opacity-50 before:-z-10 sm:before:hidden sm:w-1/2 sm:relative sm:h-fit sm:block ${workerInformationVisible ? 'hidden' : 'block'}`}>
+                        <div className={`absolute w-full h-full left-0 top-0 z-10 before:absolute before:h-full before:w-full before:bg-secundary before:opacity-50 before:-z-10 sm:before:hidden sm:w-1/2 sm:relative sm:h-fit sm:block ${workerInformationVisible ? 'block' : 'hidden'}`}>
                             <div className="absolute bg-primary w-1/2 mx-auto right-0 left-0 top-1/2 -translate-y-1/2 p-6 rounded-xl min-w-[250px] sm:min-w-0 sm:relative sm:w-full sm-p-0 sm:right-auto sm:left-auto sm:mx-0 sm:translate-y-0 sm:top-0 sm:bg-transparent">
                                 <button onClick={ toggleWorkerInformation } className="h-16 w-16 absolute right-0 top-0 text-4xl font-bold text-secundary sm:hidden">X</button>
                                 <div className="block w-full h-64 -z-10 mx-auto sm:h-96 sm:w-64 sm:absolute">
@@ -443,7 +442,7 @@ export default function Home ({ posts }) {
 						</p>
 
 						<div className='w-5/6 mx-auto max-h-84 mt-16 sm:mt-16'>			
-							<a href='https://discord.com/invite/EWNk2mmDKc' target="_blank" className='group duration-200 bg-main-blue w-fit min-w-16 mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
+							<a href='https://discord.com/invite/qsaSA45KUX' target="_blank" className='group duration-200 bg-main-blue w-fit min-w-16 mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
 								<p className='uppercase text-lg text-white text-center font-black px-2 my-4 min-[400px]:text-2xl min-[400px]:mx-10 [400px]:my-4'>Join Discord</p>
 							</a>
 						</div>

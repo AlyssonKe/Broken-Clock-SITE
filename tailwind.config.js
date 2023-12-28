@@ -52,6 +52,9 @@ module.exports = {
 
         // Community
         'john-and-mark-parallax': "url('../public/images/john-and-mark-parallax.png')",
+
+        // Others
+        'menu-button': "url('../public/images/menu-button.svg')",
       },
 
       transitionProperty: {
