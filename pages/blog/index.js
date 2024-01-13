@@ -13,8 +13,7 @@ export default function Blog({posts}){
 
         <Link href={"/"} className='bg-main-orange w-full h-full'></Link>
 
-        <div className="bg-main-blue w-full h-screen">
-
+        <div className="w-full h-screen -mt-20 py-20">
             <div className="bg-white w-10/12 mx-auto py-24">
                 <div className="pb-10">
                     <h1 className="uppercase text-secundary font-black text-5xl pb-2">Last news</h1>
