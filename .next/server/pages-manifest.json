@@ -1,8 +1,11 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/blog": "pages/blog.js",
+  "/_error": "pages/_error.js",
+  "/api/players-online/[universeId]": "pages/api/players-online/[universeId].js",
+  "/api/sendEmail": "pages/api/sendEmail.js",
   "/contact": "pages/contact.js",
+  "/blog/[slug]": "pages/blog/[slug].js",
+  "/blog": "pages/blog.js",
   "/": "pages/index.js"
 }
