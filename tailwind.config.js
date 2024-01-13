@@ -34,7 +34,7 @@ module.exports = {
         // Shadows Gradients
         'home-shadow': "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%)",
         'game-shadow': "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 70.96%, rgba(0, 0, 0, 0.95) 100%)",
-        'game-shadow': "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 70.96%, rgba(0, 0, 0, 0.95) 100%)",
+        'contact-shadow': "linear-gradient(261deg, rgba(0, 0, 0, 0.20) 47.56%, rgba(0, 0, 0, 0.75) 89.1%);",
 
         // Games
         'john-and-mark': "url('../public/images/games/john-and-mark.png')",
@@ -52,6 +52,9 @@ module.exports = {
 
         // Community
         'john-and-mark-parallax': "url('../public/images/john-and-mark-parallax.png')",
+
+        // Contact
+        'contact': "url('../public/images/contact.png')",
 
         // Others
         'menu-button': "url('../public/images/menu-button.svg')",

@@ -2,14 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: Arial, Helvetica, sans-serif;
-	text-decoration: none;
-}
-
 :root {
 	--bg-primary: #0c151b;
     --header-color: #0D0D0D;
@@ -26,10 +18,9 @@
 	--line: #CEF6FE;
 }
 
-body {
-	background: var(--bg-primary);
+.markdown h1 {
+    @apply text-2xl font-bold;
 }
-
-.clear {
-	clear: both;
+.markdown p {
+    @apply text-base;
 }

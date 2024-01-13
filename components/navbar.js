@@ -12,18 +12,23 @@ export default function Navbar() {
         if (scrollPosition > 0) {
             header.style.backgroundColor = '#0F0F0F'; // Cor de fundo quando rolar
             header.style.opacity = '1'; // Opacidade quando rolar
+            header.style.borderBottomColor = '#676767'; // Opacidade quando rolar
         } else {
             header.style.backgroundColor = 'transparent'; // Cor de fundo quando no topo
             header.style.opacity = '1'; // Opacidade quando no topo
+            header.style.borderBottomColor = 'transparent'; // Opacidade quando rolar
         }
     };
     
     React.useEffect(() => {
         window.addEventListener('scroll', handleScroll);
+
+        handleScroll();
+        
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
-      }, []);
+    }, []);
 
     const [menuVisible, setMenuVisible] = useState(false);
 
@@ -33,7 +38,7 @@ export default function Navbar() {
     };
 
     return (
-        <header id="header" className='h-20 w-full bg-secundary bg-opacity-0 sticky top-0 z-50 items-center duration-200'>
+        <header id="header" className='h-20 w-full bg-secundary border-b-1 border-gray bg-opacity-0 sticky top-0 z-50 items-center duration-200'>
             <nav>
 
                 {/* <div className='bg-white h-20 w-20'>
@@ -43,7 +48,7 @@ export default function Navbar() {
                 <div className={`h-20 w-full float-left bg-secundary absolute z-50 items-center sm:hidden ${menuVisible ? 'block' : 'hidden'} transition-all duration-300`}></div>
 
                 {/* Logo */}
-                <Link href='/' className='absolute bg-bc-logo-name bg-center bg-contain bg-no-repeat w-24 h-20 ml-4 z-50 min-[350px]:right-0 min-[350px]:left-0 min-[350px]:mx-auto md:w-32 sm:ml-8 sm:right-auto sm:left-auto lg:ml-16'></Link>
+                <Link href='/' className='absolute bg-bc-logo-name bg-center bg-contain bg-no-repeat w-24 h-12 ml-4 mt-4 z-50 min-[350px]:right-0 min-[350px]:left-0 min-[350px]:mx-auto md:w-32 sm:ml-8 sm:right-auto sm:left-auto lg:ml-16'></Link>
                 
                 {/* Open menu button */}
                 <button onClick={toggleMenu} href='/' className='absolute bg-menu-button right-0 bg-contain bg-no-repeat w-10 h-10 mr-3 top-1/2 -translate-y-1/2 inline z-50 min-[200px]:mr-10 sm:hidden'></button>
@@ -51,7 +56,7 @@ export default function Navbar() {
                 <div className='clear-both'></div>
 
                 <div className={`h-screen w-full backdrop-blur-2xl absolute top-0 before:absolute before:h-full before:w-full before:bg-secundary before:opacity-80 sm:absolute sm:h-full sm:before:opacity-0 sm:backdrop-blur-none ${menuVisible ? 'block' : 'hidden'} duration-300 transition-all sm:block sm:right-0 sm:duration-0`}>
-                    <ul className='absolute top-1/2 -translate-y-1/2 w-fit mx-auto right-0 left-0 space-x-0 space-y-4 gap-6 uppercase text-xl text-white font-semibold sm:mr-8 md:text-xl lg:mr-16 sm:flex sm:space-x-1 sm:space-y-0'>
+                    <ul className='absolute top-1/2 -translate-y-1/2 w-fit mx-auto right-0 left-0 space-x-0 space-y-4 gap-6 uppercase text-lg text-white font-semibold sm:mr-8 md:text-base lg:mr-16 sm:flex sm:space-x-1 sm:space-y-0'>
                         <li className='group'>
                             <div className='h-16 w-full flex items-center md:h-20'>
                                 <Link href='/' className='mx-auto group-hover:text-main-blue group-hover:duration-200'>Home</Link>
@@ -72,7 +77,7 @@ export default function Navbar() {
 
                         <li className='group'>
                             <div className='h-16 w-full flex items-center md:h-20'>
-                                <Link href='/' className='mx-auto group-hover:text-main-blue group-hover:duration-200'>Contact</Link>
+                                <Link href='/contact' className='mx-auto group-hover:text-main-blue group-hover:duration-200'>Contact</Link>
                             </div>
                         </li>
                     </ul>

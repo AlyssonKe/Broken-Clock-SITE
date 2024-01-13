@@ -1,6 +1,11 @@
 import axios from 'axios';
 
 export default async function handler(req, res) {
+  if (req.method !== 'GAME_INFO') {
+    res.status(405).json({ message: 'Method Not Allowed' });
+    return;
+  }
+
   const { universeId } = req.query;
 
   try {
