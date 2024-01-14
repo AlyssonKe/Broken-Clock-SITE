@@ -1,11 +1,14 @@
 import SocialMedia from "../components/social-media";
 import PlayersOnline from "../components/players-online"
 
+import { getSortedPosts } from '../lib/getSortedPosts';
+
 import fs from 'fs';
 import path from "path";
 import matter from "gray-matter";
 import { useState } from "react";
 import React from 'react';
+import Link from 'next/link'
 
 export async function getStaticProps() {
 	// Read the pages/posts dir
@@ -30,16 +33,25 @@ export async function getStaticProps() {
 		};
 	  })
 	);
+
+	const allPosts = getSortedPosts();
+	const featuredPost = allPosts[0];
+    // const otherPosts = allPosts.slice(1, 3);
+
+	// const allPosts = getSortedPosts();
+    // const recentPosts = allPosts.slice(0, 3); // Pegar os últimos 3 posts
   
 	// Return all the posts frontMatter and slug as props
 	return {
 		props: {
-		posts,
+			posts,
+			featuredPost
+			// recentPosts
 		},
 	};
 }
 
-export default function Home ({ posts }) {
+export default function Home ({ posts, featuredPost }) {
 	const [workerName, setWorkerName] = useState(null)
 	const [workerRole, setWorkerRole] = useState(null)
 	const [workerDescription, setWorkerDescription] = useState(null)
@@ -173,16 +185,16 @@ export default function Home ({ posts }) {
 
 
             {/* -- About */}
-            <div className='bg-primary'>
+            <div className='bg-secundary'>
 				<div className='w-10/12 mx-auto py-24'>
 					<div className='relative w-full h-fit duration-200 mx-auto mt-15'>
-						<a href='https://www.roblox.com/groups/4756258/Broken-Clock' target="_blank" className='relative h-48 w-full block bg-bc-logo-name-black bg-contain bg-center bg-no-repeat left-0 right-0 mx-auto sm:w-96'></a>
+						<a href='https://www.roblox.com/groups/4756258/Broken-Clock' target="_blank" className='relative h-48 w-full block bg-bc-logo-name bg-contain bg-center bg-no-repeat left-0 right-0 mx-auto sm:w-96'></a>
 
-						<h1 className="font-black text-5xl text-center text-secundary uppercase mt-4">
+						<h1 className="font-black text-5xl text-center text-white uppercase mt-4">
 							Who we are
 						</h1>
 						<h2 className="font-bold text-2xl text-center text-gray mt-2">
-						We are an independent Roblox game development studio!
+							We are an independent Roblox game development studio!
 						</h2>
 
 						<div className='w-5/6 mx-auto max-h-84 mt-12 sm:mt-14'>			
@@ -194,19 +206,69 @@ export default function Home ({ posts }) {
 				</div>
 			</div>
 
+			{/* Latest Blog */}
+			<div className='featured-post-bg z-10 relative overflow-hidden bg-primary bg-cover before:absolute before:w-full before:h-full before:bg-latest-blog before:bg-center before:bg-no-repeat before:opacity-10 before:blur-[10px] before:-z-10'>
+				<style>
+					{`.featured-post-bg:before { background-image: url(${featuredPost.cover}); }`}
+				</style>
+					
+				<div className='bg-latest-blog-shadow-primary bg-cover bg-left-bottom bg-no-repeat'>
+					<div className='bg-latest-blog-shadow-secundary bg-cover bg-left-top bg-no-repeat'>
+						<div className='h-[10vh] w-full '> </div>
+						<div className='w-full'>
+
+							<div className='w-5/6 mx-auto md:w-[640px]'>
+								<h1 className="font-black text-5xl text-center text-white uppercase mt-4">
+									Featured content
+								</h1>
+								<h2 className="font-bold text-2xl text-center text-main-blue mt-2">
+									Latest News
+								</h2>
+
+								<div className='bg-line h-0.5 w-5/6 mx-auto mt-6 mb-14'></div>
+
+								{/* Content */}
+								<Link href={`/blog/${featuredPost.slug}`} className='featured-post relative w-full h-72 block rounded-lg shadow-latest-blog duration-300 sm:h-96 overflow-hidden before:absolute before:bg-cover before:bg-center before:w-full before:h-full before:duration-300 before:hover:duration-300 before:hover:scale-110'>
+									<style>
+										{`.featured-post:before { background-image: url(${featuredPost.cover}); }`}
+									</style>
+					
+									
+									<div className='relative bg-latest-blog-shadow-content h-72 w-full rounded-lg items-end duration-300 sm:h-96'>
+										<div className='absolute bottom-0 right-0 left-0 mb-4 md:ml-6'>
+											<h2 className='text-white text-2xl font-black text-center md:text-left'>{featuredPost.title}</h2>
+											<p className='uppercase text-main-blue text-lg font-bold text-center md:text-left'>Latest Blog</p>
+										</div>
+
+										<div className='group hidden absolute right-0 bottom-0 mr-8 mb-6 cursor-pointer duration-200 bg-main-blue h-12 w-48 min-w-[180px] mx-auto rounded-xl items-center hover:shadow-button hover:duration-200 hover:transition-all md:flex'>
+											<p className='inline uppercase text-lg text-white text-left font-bold mx-4'>Read more</p>
+											<div className='inline w-10 h-10 bg-right-arrow bg-center bg-contain'></div>
+										</div>
+									</div>
+
+									{/* <div className='relative top-0 -translate-y-full float-left bg-latest-blog bg-cover bg-center bg-no-repeat w-full h-full duration-300 hover:duration-300 hover:scale-150'></div> */}
+								</Link>
+								
+							</div>
+						</div>
+						<div className='h-[10vh] w-full'> </div>
+					</div>
+				</div>
+			</div>
+
             {/* Games */}
 			<span id='games'></span>
-            <div className='bg-secundary-white'>
+            <div className='bg-secundary'>
 				<div className='w-10/12 mx-auto py-24'>
 					<div className="pb-10">
-						<h1 className="uppercase text-secundary font-black text-5xl pb-2">Our Games</h1>
-						<h2 className="text-gray font-bold text-2xl">Let’s enjoy with us!</h2>
+						<h1 className="uppercase text-white font-black text-5xl pb-2">Our Games</h1>
+						<h2 className="text-main-blue font-bold text-2xl">Let’s enjoy with us!</h2>
 					</div>
 
 					<div className='w-full h-fit flex flex-wrap'>
 						{/* John and Mark */}
 						<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 2xl:w-1/3 max-w-2xl">
-							<div className="bg-primary w-full h-full rounded-xl overflow-hidden shadow-games">
+							<div className="bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games">
 								<a href="https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark-STORY" target="_blank" className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
 									{/* Players online */}
 									<div className="w-24 absolute bottom-0 flex mb-2 ml-4 z-10 pointer-events-none text-white text-lg">
@@ -237,7 +299,7 @@ export default function Home ({ posts }) {
 						
 						{/* Treacherous Tower */}
 						<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 2xl:w-1/3 max-w-2xl">
-							<div className="bg-primary w-full h-full rounded-xl overflow-hidden shadow-games">
+							<div className="bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games">
 								<a href="https://www.roblox.com/games/4237861040/Treacherous-Tower" target="_blank" className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
 									{/* Players online */}
 									<div className="w-24 absolute bottom-0 flex mb-2 ml-4 z-10 pointer-events-none text-white text-lg">
@@ -268,7 +330,7 @@ export default function Home ({ posts }) {
 
 						{/* Never Die */}
 						<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 lg:w-1/3 max-w-2xl">
-							<div className="bg-primary w-full h-full rounded-xl overflow-hidden shadow-games">
+							<div className="bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games">
 								<a className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
 									{/* Year */}
 									<div className='absolute right-0 bottom-0 duration-200 bg-main-orange w-fit mr-6 mb-4 rounded-full flex items-center z-10 pointer-events-none'>
@@ -296,11 +358,11 @@ export default function Home ({ posts }) {
 			</div>
 
 			 {/* Team */}
-			 <div className='relative bg-primary'>
+			 <div className='relative bg-secundary-white'>
 				<div className='w-10/12 mx-auto py-24'>
 					<div className="pb-10">
 						<h1 className="uppercase text-secundary font-black text-5xl pb-2">The Team</h1>
-						<h2 className="text-gray font-bold text-2xl">Get to know us!</h2>
+						<h2 className="text-main-blue font-bold text-2xl">Get to know us!</h2>
 					</div>
 
                     <div className="w-full h-fit sm:flex">
@@ -312,7 +374,7 @@ export default function Home ({ posts }) {
 										<div className="block relative w-full h-full bg-secundary-white overflow-hidden">
 											{/* Worker cover */}
 											<div className='bg-cover bg-no-repeat bg-center duration-300 h-full'>
-												<div alt="Cover Image" className="w-full h-full absolute" style={{ backgroundImage: `url(${post.frontMatter.thumbnail})` }} />
+												<div alt="Cover Image" className="w-full h-full absolute bg-cover" style={{ backgroundImage: `url(${post.frontMatter.thumbnail})` }} />
 												<div className='relative bg-game-shadow h-full w-full items-end sm:h-full z-10'></div>
 											</div>
 										</div>
@@ -329,7 +391,7 @@ export default function Home ({ posts }) {
                         </div>
                         
                         <div className={`absolute w-full h-full left-0 top-0 z-10 before:absolute before:h-full before:w-full before:bg-secundary before:opacity-50 before:-z-10 sm:before:hidden sm:w-1/2 sm:relative sm:h-fit sm:block ${workerInformationVisible ? 'block' : 'hidden'}`}>
-                            <div className="absolute bg-primary w-1/2 mx-auto right-0 left-0 top-1/2 -translate-y-1/2 p-6 rounded-xl min-w-[250px] sm:min-w-0 sm:relative sm:w-full sm-p-0 sm:right-auto sm:left-auto sm:mx-0 sm:translate-y-0 sm:top-0 sm:bg-transparent">
+                            <div className="absolute bg-secundary-white w-1/2 mx-auto right-0 left-0 top-1/2 -translate-y-1/2 p-6 rounded-xl min-w-[250px] sm:min-w-0 sm:relative sm:w-full sm-p-0 sm:right-auto sm:left-auto sm:mx-0 sm:translate-y-0 sm:top-0 sm:bg-transparent">
                                 <button onClick={ toggleWorkerInformation } className="h-16 w-16 absolute right-0 top-0 text-4xl font-bold text-secundary sm:hidden">X</button>
                                 <div className="block w-full h-64 -z-10 mx-auto sm:h-96 sm:w-64 sm:absolute">
 									<img
@@ -358,7 +420,7 @@ export default function Home ({ posts }) {
                                 </div>
 
                                 <div className={`w-full h-[2px] bg-secundary my-2 ${selectedPost !== null ? 'block' : 'hidden'}`}></div>
-                                <h3 className="text-gray text-left text-xl font-bold italic">{workerRole}</h3>
+                                <h3 className="text-secundary-gray text-left text-xl font-bold italic">{workerRole}</h3>
                                 <h3 className="text-secundary text-left text-xl mt-4">{workerDescription}</h3>
                             </div>
                         </div>

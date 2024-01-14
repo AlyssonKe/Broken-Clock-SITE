@@ -5,31 +5,6 @@ import React from 'react';
 import { useState } from "react";
 
 export default function Navbar() {
-    const handleScroll = () => {
-        const scrollPosition = window.scrollY;
-        const header = document.getElementById('header');
-
-        if (scrollPosition > 0) {
-            header.style.backgroundColor = '#0F0F0F'; // Cor de fundo quando rolar
-            header.style.opacity = '1'; // Opacidade quando rolar
-            header.style.borderBottomColor = '#676767'; // Opacidade quando rolar
-        } else {
-            header.style.backgroundColor = 'transparent'; // Cor de fundo quando no topo
-            header.style.opacity = '1'; // Opacidade quando no topo
-            header.style.borderBottomColor = 'transparent'; // Opacidade quando rolar
-        }
-    };
-    
-    React.useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-
-        handleScroll();
-        
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
     const [menuVisible, setMenuVisible] = useState(false);
 
     const toggleMenu = () => {
@@ -38,14 +13,14 @@ export default function Navbar() {
     };
 
     return (
-        <header id="header" className='h-20 w-full bg-secundary border-b-1 border-gray bg-opacity-0 sticky top-0 z-50 items-center duration-200'>
+        <header id="header" className='h-20 w-full bg-primary border-b-[1px] border-gray sticky top-0 z-50 items-center duration-200'>
             <nav>
 
                 {/* <div className='bg-white h-20 w-20'>
                     Ata
                 </div> */}
 
-                <div className={`h-20 w-full float-left bg-secundary absolute z-50 items-center sm:hidden ${menuVisible ? 'block' : 'hidden'} transition-all duration-300`}></div>
+                <div className={`h-20 w-full float-left bg-primary absolute z-50 items-center sm:hidden ${menuVisible ? 'block' : 'hidden'} transition-all duration-300`}></div>
 
                 {/* Logo */}
                 <Link href='/' className='absolute bg-bc-logo-name bg-center bg-contain bg-no-repeat w-24 h-12 ml-4 mt-4 z-50 min-[350px]:right-0 min-[350px]:left-0 min-[350px]:mx-auto md:w-32 sm:ml-8 sm:right-auto sm:left-auto lg:ml-16'></Link>
@@ -71,7 +46,7 @@ export default function Navbar() {
 
                         <li className='group'>
                             <div className='h-16 w-full flex items-center md:h-20'>
-                                <Link href='/' className='mx-auto group-hover:text-main-blue group-hover:duration-200'>Blog</Link>
+                                <Link href='/blog' className='mx-auto group-hover:text-main-blue group-hover:duration-200'>Blog</Link>
                             </div>
                         </li>
 

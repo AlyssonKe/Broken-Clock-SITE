@@ -24,3 +24,26 @@
 .markdown p {
     @apply text-base;
 }
+
+.featured-post:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    opacity: 1; /* Ajuste a transparência conforme necessário */
+}
+
+.featured-post-bg:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    opacity: 0.2; /* Ajuste a transparência conforme necessário */
+    z-index: -1; /* Coloca o pseudoelemento atrás do conteúdo */
+}

@@ -13,11 +13,11 @@ export default function Blog({posts}){
 
         <Link href={"/"} className='bg-main-orange w-full h-full'></Link>
 
-        <div className="w-full h-screen -mt-20 py-20">
-            <div className="bg-white w-10/12 mx-auto py-24">
+        <div className="bg-primary w-full h-screen -mt-20 py-20">
+            <div className="w-10/12 mx-auto py-24">
                 <div className="pb-10">
-                    <h1 className="uppercase text-secundary font-black text-5xl pb-2">Last news</h1>
-                    <h2 className="text-gray font-bold text-2xl">Find out what's going on!</h2>
+                    <h1 className="uppercase text-white font-black text-5xl pb-2">Last news</h1>
+                    <h2 className="text-main-blue font-bold text-2xl">Find out what's going on!</h2>
                 </div>
 
                 <div className="w-full h-fit">
@@ -27,7 +27,7 @@ export default function Blog({posts}){
                             // Extract slug and frontmatter
                             const {slug, frontmatter} = post;
                             // Extract frontmatter properties
-                            const {title, author, category, date, banner, description, tags} = frontmatter;
+                            const {title, date, cover, description, author, category, tags} = frontmatter;
 
                             // JSX for individual blog listing
                             return (
@@ -42,7 +42,7 @@ export default function Blog({posts}){
                                                     </div>
 
                                                     {/* Game cover */}
-                                                    <div className='bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110' style={{ backgroundImage: `url(${banner})` }}>
+                                                    <div className='bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110' style={{ backgroundImage: `url(${cover})` }}>
                                                         <div className='relative bg-game-shadow h-full w-full items-end sm:h-full'></div>
                                                     </div>
                                                 </div>
@@ -69,10 +69,10 @@ export default function Blog({posts}){
 export async function getStaticProps() {
     const files = fs.readdirSync(path.join('posts'))
    
-    const posts = files.map(filename => {
-        const slug = filename.replace('.md', '')
+    const posts = files.map(fileName => {
+        const slug = fileName.replace('.md', '')
 
-        const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
+        const markdownWithMeta = fs.readFileSync(path.join('posts', fileName), 'utf-8')
 
         const {data: frontmatter} = matter(markdownWithMeta)
 

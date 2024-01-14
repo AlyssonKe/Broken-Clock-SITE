@@ -55,15 +55,15 @@ export default function Home () {
 			</Head>
 
 			<div className="flex">
-				<div className="w-1/2 h-screen right-0 bg-secundary-white -mt-20">
+				<div className="w-1/2 h-screen right-0 bg-secundary -mt-20">
 					<div className="relative mt-48 ml-16 w-2/3 xl:ml-32">
 						<div className="pb-10">
-							<h1 className="uppercase text-secundary font-black text-5xl pb-2">Contact</h1>
-							<h2 className="text-gray font-bold text-2xl">How can we help?</h2>
+							<h1 className="uppercase text-white font-black text-5xl pb-2">Contact</h1>
+							<h2 className="text-main-blue font-bold text-2xl">How can we help?</h2>
 
-							<div className="w-full h-[2px] bg-secundary my-2"></div>
+							<div className="w-full h-[1px] bg-white my-2"></div>
 
-							<h3 className="text-secundary text-left text-xl mt-4 mb-8">Fill in the information in this contact form. We will get back in touch as soon as possible.</h3>
+							<h3 className="text-primary-gray text-left text-xl mt-4 mb-8">Fill in the information in this contact form. We will get back in touch as soon as possible.</h3>
 							
 							<a href="mailto:principal@brokenclock.fun" className="text-main-blue text-left text-xl font-bold">principal@brokenclock.fun</a>
 							<br></br>
@@ -89,7 +89,7 @@ export default function Home () {
 								</a>
 							</div> */}
 
-							<div className='absolute bg-primary w-3/4 top-1/2 -translate-y-1/2 mx-auto right-0 left-0 rounded-xl mt-5 lg:w-[350px] xl:w-[450px]'>
+							<div className='absolute bg-primary-white w-3/4 top-1/2 -translate-y-1/2 mx-auto right-0 left-0 rounded-xl mt-5 lg:w-[350px] xl:w-[450px]'>
 								<form onSubmit={handleSubmit} className="px-8 py-10">
 									<input type="text"
 										id="subject"

@@ -7,9 +7,7 @@ export default function PlayersOnline({ universeId }) {
   useEffect(() => {
     const fetchPlayersOnline = async () => {
       try {
-        const response = await fetch(`/api/players-online/${universeId}`, {
-          method: "GAME_INFO"
-        });
+        const response = await fetch(`/api/players-online/${universeId}`);
         const data = await response.text();
         setPlayersOnline(data);
       } catch (error) {
