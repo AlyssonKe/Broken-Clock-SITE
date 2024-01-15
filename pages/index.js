@@ -198,10 +198,10 @@ export default function Home ({ posts, featuredPost }) {
 				<div className='relative -mt-20 h-[calc(100vh)] max-h-[1024px] min-h-[600px]'>
 					<div id="scrolling-container" className="w-full h-full overflow-hidden">
 						<div id="scrolling-content" className="w-full h-full flex flex-row after:bg-home-shadow after:absolute after:w-full after:h-full after:top-0">
-							<div className="w-full h-full shrink-0 overflow-hidden ">
+							<div className="w-full h-full shrink-0 overflow-hidden">
 								<div className="w-full h-full bg-home-page1 bg-cover bg-center blur-sm"></div>
 
-								<div className='relative w-full h-full -top-full z-20'>
+								<div className='relative w-full h-full -top-full z-10'>
 									<div className='relative w-11/12 top-1/2 -translate-y-1/2 duration-200 h-72 mx-auto mt-15 md:w-144 md:mt-0 sm:h-96 xl:h-[520px]'>
 										<div className='h-full w-full relative block bg-john-and-mark-logo-name bg-contain bg-center bg-no-repeat min-[320px]:h-64 sm:h-[300px] md:h-[300px] lg:h-[310px] xl:h-[400px]'></div>
 

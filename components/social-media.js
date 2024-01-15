@@ -1,6 +1,6 @@
 export default function SocialMedia() {
     return (
-        <ul className='absolute w-8 h-fit right-0 items-center mr-8 space-y-8 top-1/2 -translate-y-1/2'>
+        <ul className='absolute w-8 h-fit right-0 items-center mr-8 space-y-8 top-1/2 -translate-y-1/2 z-50'>
             <li className='h-8 w-8 float-left'>
                 <a href='https://twitter.com/BrokenClockRBX' target="_blank" className='h-full w-full float-left'>
                     <svg className='fill-white duration-200 hover:fill-main-blue hover:duration-200' viewBox="0 0 512 512">
