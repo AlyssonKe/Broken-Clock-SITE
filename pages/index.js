@@ -1,5 +1,6 @@
-import SocialMedia from "../components/social-media";
-import PlayersOnline from "../components/players-online"
+import SocialMedia from "/components/social-media";
+import PlayersOnline from "/components/players-online"
+import CustomHead from '/components/CustomHead';
 
 import { getSortedPosts } from '../lib/getSortedPosts';
 
@@ -185,327 +186,335 @@ export default function Home ({ posts, featuredPost }) {
 
 	 
     return (
-        <div className="bg-secundary bg-opacity-40">
-            {/* Home */}
-            <div className='relative -mt-20 h-[calc(100vh)] max-h-[1024px] min-h-[600px]'>
-				<div id="scrolling-container" className="w-full h-full overflow-hidden">
-					<div id="scrolling-content" className="w-full h-full flex flex-row after:bg-home-shadow after:absolute after:w-full after:h-full after:top-0">
-						<div className="w-full h-full shrink-0 overflow-hidden ">
-							<div className="w-full h-full bg-home-page1 bg-cover bg-center blur-sm"></div>
+		<>
+			<CustomHead
+                description="Official website of Broken Clock, an indie game development studio on the Roblox platform." 
+                author="Duelan"
+                cover="/images/broken-clock-logo-name.png"
+            />
 
-							<div className='relative w-full h-full -top-full z-20'>
-								<div className='relative w-11/12 top-1/2 -translate-y-1/2 duration-200 h-72 mx-auto mt-15 md:w-144 md:mt-0 sm:h-96 xl:h-[520px]'>
-									<div className='h-full w-full relative block bg-john-and-mark-logo-name bg-contain bg-center bg-no-repeat min-[320px]:h-64 sm:h-[300px] md:h-[300px] lg:h-[310px] xl:h-[400px]'></div>
+			<div className="bg-secundary bg-opacity-40">
+				{/* Home */}
+				<div className='relative -mt-20 h-[calc(100vh)] max-h-[1024px] min-h-[600px]'>
+					<div id="scrolling-container" className="w-full h-full overflow-hidden">
+						<div id="scrolling-content" className="w-full h-full flex flex-row after:bg-home-shadow after:absolute after:w-full after:h-full after:top-0">
+							<div className="w-full h-full shrink-0 overflow-hidden ">
+								<div className="w-full h-full bg-home-page1 bg-cover bg-center blur-sm"></div>
 
-									<div className='w-5/6 mx-auto max-h-84 mt-12 sm:mt-14'>			
-										<a href='https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark' target="_blank" className='group duration-200 bg-main-blue h-16 w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
-											<p className='uppercase text-xl text-white text-center font-black mx-auto px-8 min-[400px]:text-2xl min-[400px]:px-10'>Play now</p>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
+								<div className='relative w-full h-full -top-full z-20'>
+									<div className='relative w-11/12 top-1/2 -translate-y-1/2 duration-200 h-72 mx-auto mt-15 md:w-144 md:mt-0 sm:h-96 xl:h-[520px]'>
+										<div className='h-full w-full relative block bg-john-and-mark-logo-name bg-contain bg-center bg-no-repeat min-[320px]:h-64 sm:h-[300px] md:h-[300px] lg:h-[310px] xl:h-[400px]'></div>
 
-						<div className="w-full h-full shrink-0 overflow-hidden">
-							<div className="w-full h-full bg-home-page2 bg-cover bg-center blur-sm"></div>
-
-							<div className='relative w-full h-full -top-full z-20'>
-								<div className='relative w-8/12 h-fit top-1/2 -translate-y-1/2 duration-200 mx-auto mt-15 md:w-10/12 md:mt-0 sm:h-96 xl:h-[520px]'>
-									<div className='w-full translate-y-0 mx-auto max-h-84 sm:translate-y-1/2'>
-										<h1 className="font-black text-5xl text-center text-main-blue uppercase mt-4">
-											Read our first blog!
-										</h1>
-										<h2 className="font-bold text-2xl text-center text-secundary-gray mt-2">
-											Discover our plans and ideas for 2024!
-										</h2>
-										
 										<div className='w-5/6 mx-auto max-h-84 mt-12 sm:mt-14'>			
-											<Link href={`/blog/first-blog`} className='group duration-200 bg-main-blue h-16 w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
-												<p className='uppercase text-xl text-white text-center font-black mx-auto px-8 min-[400px]:text-2xl min-[400px]:px-10'>Read now</p>
-											</Link>
+											<a href='https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark' target="_blank" className='group duration-200 bg-main-blue h-16 w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
+												<p className='uppercase text-xl text-white text-center font-black mx-auto px-8 min-[400px]:text-2xl min-[400px]:px-10'>Play now</p>
+											</a>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-				{/* Background */}
-				
-					{/* <div className='h-screen w-full bg-principal bg-cover bg-center bg-no-repeat'></div>
-					<div className='h-screen w-full bg-principal-shadow bg-cover absolute top-0'></div> */}
-				
-				{/* <div className='relative h-[calc(100vh-1rem)] w-full top-1/2 -translate-y-1/2 max-h-[400px] md:max-h-[500px]'>
-					<a href='https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark' target="_blank" className='mx:auto w-5/6 h-full mx-auto block bg-john-and-mark-logo-name bg-contain bg-center bg-no-repeat sm:aspect-square sm:w-auto'></a>
-					
 
-					<a href='https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark' className='group duration-200 bg-main-blue mt-10 h-16 w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all min-[300px]:mt-15 md:mt-20'>
-						<p className='uppercase text-2xl text-white text-center font-black mx-auto px-10 min-[400px]:text-3xl'>Play now</p>
-					</a>
-				</div> */}
+							<div className="w-full h-full shrink-0 overflow-hidden">
+								<div className="w-full h-full bg-home-page2 bg-cover bg-center blur-sm"></div>
 
-				<div className="hidden sm:block">
-					<SocialMedia />
-				</div>
-				
-				<div className='absolute w-fit bottom-0 right-0 left-0 mx-auto gap-0 space-x-3 flex items-center flex-row mb-6 z-50'>
-					<button className={`aspect-square rounded-full duration-200 ${currentIndex === 0 ? 'bg-main-blue h-4' : 'bg-white h-3'}`} onClick={() => handleButtonClick(0)}></button>
-					<button className={`aspect-square rounded-full duration-200 ${currentIndex === 1 ? 'bg-main-blue h-4' : 'bg-white h-3'}`} onClick={() => handleButtonClick(1)}></button>
-				</div>
-            </div>
-
-
-            {/* -- About */}
-            <div className='bg-primary'>
-				<div className='w-10/12 mx-auto py-24'>
-					<div className='relative w-full h-fit duration-200 mx-auto mt-15'>
-						<a href='https://www.roblox.com/groups/4756258/Broken-Clock' target="_blank" className='relative h-48 w-full block bg-bc-logo-name bg-contain bg-center bg-no-repeat left-0 right-0 mx-auto sm:w-96'></a>
-
-						<h1 className="font-black text-5xl text-center text-secundary uppercase mt-4">
-							Who we are?
-						</h1>
-						<h2 className="font-bold text-2xl text-center text-gray mt-2">
-							We are an independent Roblox game development studio!
-						</h2>
-
-						<div className='w-5/6 mx-auto max-h-84 mt-12 sm:mt-14'>			
-							<a href='https://www.roblox.com/groups/4756258/Broken-Clock' target="_blank" className='duration-200 bg-main-blue w-fit min-w-16 mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
-								<p className='uppercase text-lg text-white text-center font-black px-2 my-4 min-[400px]:text-2xl min-[400px]:mx-10 [400px]:my-4'>Our Roblox Group</p>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			{/* Latest Blog */}
-			<div className='featured-post-bg z-10 relative overflow-hidden bg-secundary-white bg-cover before:absolute before:w-full before:h-full before:bg-latest-blog before:bg-center before:bg-no-repeat before:opacity-10 before:blur-[10px] before:-z-10'>				
-				<div className='w-10/12 mx-auto py-24'>
-					<div className="pb-10">
-						<h1 className="uppercase text-secundary font-black text-5xl pb-2">Featured content</h1>
-						<h2 className="text-gray font-bold text-2xl">Latest news</h2>
-					</div>
-
-
-
-					<div className='w-5/6 mx-auto md:w-[640px] mt-5'>
-						{/* Content */}
-						<Link href={`/blog/${featuredPost.slug}`} className='featured-post relative w-full h-72 block rounded-lg shadow-latest-blog duration-300 sm:h-96 overflow-hidden before:absolute before:bg-cover before:bg-center before:w-full before:h-full before:duration-300 before:hover:duration-300 before:hover:scale-110'>
-							<style>
-								{`.featured-post:before { background-image: url(${featuredPost.cover}); }`}
-							</style>
-			
-							
-							<div className='relative bg-latest-blog-shadow-content h-72 w-full rounded-lg items-end duration-300 sm:h-96'>
-								<div className='absolute bottom-0 right-0 left-0 mb-4 md:ml-6'>
-									<h2 className='text-white text-2xl font-bold text-center md:text-left'>{featuredPost.title}</h2>
-									<p className='uppercase text-main-blue text-lg font-semibold text-center md:text-left'>Latest Blog</p>
-								</div>
-
-								<div className='group hidden absolute right-0 bottom-0 mr-8 mb-6 cursor-pointer duration-200 bg-main-blue h-12 w-48 min-w-[180px] mx-auto rounded-xl items-center hover:shadow-button hover:duration-200 hover:transition-all md:flex'>
-									<p className='inline uppercase text-lg text-white text-left font-black mx-4'>Read more</p>
-									<div className='inline w-10 h-10 bg-right-arrow bg-center bg-contain'></div>
-								</div>
-							</div>
-
-							{/* <div className='relative top-0 -translate-y-full float-left bg-latest-blog bg-cover bg-center bg-no-repeat w-full h-full duration-300 hover:duration-300 hover:scale-150'></div> */}
-						</Link>
-					</div>
-				</div>
-			</div>
-
-            {/* Games */}
-			<span id='games'></span>
-            <div className='bg-primary'>
-				<div className='w-10/12 mx-auto py-24'>
-					<div className="pb-10">
-						<h1 className="uppercase text-secundary font-black text-5xl pb-2">Our Games</h1>
-						<h2 className="text-gray font-bold text-2xl">Let’s enjoy with us!</h2>
-					</div>
-
-					<div className='w-full h-fit flex flex-wrap'>
-						{/* John and Mark */}
-						<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 2xl:w-1/3 max-w-2xl">
-							<div className="bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games">
-								<a href="https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark-STORY" target="_blank" className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
-									{/* Players online */}
-									<div className="w-24 absolute bottom-0 flex mb-2 ml-4 z-10 pointer-events-none text-white text-lg">
-										<PlayersOnline universeId={4884396315} />
-									</div>
-
-									{/* Year */}
-									<div className='absolute right-0 bottom-0 duration-200 bg-main-orange w-fit mr-6 mb-4 rounded-full flex items-center z-10 pointer-events-none'>
-										<p className='uppercase mx-auto text-base text-white text-center font-bold px-4 py-1'>2023</p>
-									</div>
-									
-									{/* Game cover */}
-									<div className=' bg-john-and-mark bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110'>
-										<div className='relative bg-game-shadow h-full w-full items-end sm:h-full'></div>
-									</div>
-								</a>
-								
-								<div className="w-full h-1/3 xl:h-1/4">
-									<p className="text-secundary text-center text-2xl font-bold my-4 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis">The Adventures Of John And Mark</p>
-									<div className='w-5/6 mx-auto max-h-84'>			
-										<a href='https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark-STORY' target="_blank" className='group duration-200 bg-main-blue w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
-											<p className='uppercase mx-auto text-lg text-white text-center font-black px-2 my-2 min-[400px]:text-2xl'>Play</p>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						{/* Treacherous Tower */}
-						<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 2xl:w-1/3 max-w-2xl">
-							<div className="bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games">
-								<a href="https://www.roblox.com/games/4237861040/Treacherous-Tower" target="_blank" className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
-									{/* Players online */}
-									<div className="w-24 absolute bottom-0 flex mb-2 ml-4 z-10 pointer-events-none text-white text-lg">
-										<PlayersOnline universeId={1383164929} />
-									</div>
-
-									{/* Year */}
-									<div className='absolute right-0 bottom-0 duration-200 bg-main-orange w-fit mr-6 mb-4 rounded-full flex items-center z-10 pointer-events-none'>
-										<p className='uppercase mx-auto text-base text-white text-center font-bold px-4 py-1'>2019</p>
-									</div>
-
-									{/* Game cover */}
-									<div className=' bg-treacherous-tower bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110'>
-										<div className='relative bg-game-shadow h-full w-full items-end sm:h-full'></div>
-									</div>
-								</a>
-								
-								<div className="w-full h-1/3">
-									<p className="text-secundary text-center text-2xl font-bold my-4 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis">Treacherous Tower</p>
-									<div className='w-5/6 mx-auto max-h-84'>			
-										<a href='https://www.roblox.com/games/4237861040/Treacherous-Tower' target="_blank" className='group duration-200 bg-main-blue w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
-											<p className='uppercase mx-auto text-lg text-white text-center font-black px-2 my-2 min-[400px]:text-2xl'>Play</p>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						{/* Never Die */}
-						<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 lg:w-1/3 max-w-2xl">
-							<div className="bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games">
-								<a className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
-									{/* Year */}
-									<div className='absolute right-0 bottom-0 duration-200 bg-main-orange w-fit mr-6 mb-4 rounded-full flex items-center z-10 pointer-events-none'>
-										<p className='uppercase mx-auto text-base text-white text-center font-bold px-4 py-1'>2024</p>
-									</div>
-
-									{/* Game cover */}
-									<div className=' bg-never-die bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110'>
-										<div className='relative bg-game-shadow h-full w-full items-end sm:h-full'></div>
-									</div>
-								</a>
-								
-								<div className="w-full h-1/3">
-									<p className="text-secundary text-center text-2xl font-bold my-4 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis">Never Die</p>
-									<div className='w-5/6 mx-auto max-h-84'>			
-										<a className='group duration-200 bg-button-gray w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
-											<p className='uppercase mx-auto text-lg text-white text-center font-black px-2 my-2 min-[400px]:text-2xl'>Soon</p>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			 {/* Team */}
-			 <div className='relative bg-secundary-white'>
-				<div className='w-10/12 mx-auto py-24'>
-					<div className="pb-10">
-						<h1 className="uppercase text-secundary font-black text-5xl pb-2">The Team</h1>
-						<h2 className="text-gray font-bold text-2xl">Get to know us!</h2>
-					</div>
-
-                    <div className="w-full h-fit sm:flex">
-                        <div className='w-full h-fit flex flex-wrap sm:w-1/2 sm:min-h-0'>
-							{[...posts].sort((a, b) => a.frontMatter.order - b.frontMatter.order).map((post) => (
-								<div className="w-32 h-32 sm:h-40 m-4 sm:w-40" key={post.frontMatter.title}>
-									<button onClick={() => changeWorker(post.frontMatter)} className={`absolute bg-primary w-32 h-32 rounded-xl overflow-hidden shadow-games sm:w-40 sm:h-40 ${selectedPost === post.frontMatter.title ? 'sm:outline outline-4 sm:outline-main-blue' : ''}`} key={post.frontMatter.title}>
-										{/* ... restante do seu código ... */}
-										<div className="block relative w-full h-full bg-secundary-white overflow-hidden">
-											{/* Worker cover */}
-											<div className='bg-cover bg-no-repeat bg-center duration-300 h-full'>
-												<div alt="Cover Image" className="w-full h-full absolute bg-cover" style={{ backgroundImage: `url(${post.frontMatter.thumbnail})` }} />
-												<div className='relative bg-game-shadow h-full w-full items-end sm:h-full z-10'></div>
+								<div className='relative w-full h-full -top-full z-20'>
+									<div className='relative w-8/12 h-fit top-1/2 -translate-y-1/2 duration-200 mx-auto mt-15 md:w-10/12 md:mt-0 sm:h-96 xl:h-[520px]'>
+										<div className='w-full translate-y-0 mx-auto max-h-84 sm:translate-y-1/2'>
+											<h1 className="font-black text-5xl text-center text-main-blue uppercase mt-4">
+												Read our first blog!
+											</h1>
+											<h2 className="font-bold text-2xl text-center text-secundary-gray mt-2">
+												Discover our plans and ideas for 2024!
+											</h2>
+											
+											<div className='w-5/6 mx-auto max-h-84 mt-12 sm:mt-14'>			
+												<Link href={`/blog/first-blog`} className='group duration-200 bg-main-blue h-16 w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
+													<p className='uppercase text-xl text-white text-center font-black mx-auto px-8 min-[400px]:text-2xl min-[400px]:px-10'>Read now</p>
+												</Link>
 											</div>
 										</div>
-										
-										<div className="absolute flex bottom-0 w-full h-fit before:absolute before:w-full before:h-full before:bg-secundary before:opacity-50 before:-z-10 z-10">
-											<h3 className={`text-center text-xl font-bold my-3 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis ${selectedPost === post.frontMatter.title ? 'text-white sm:text-main-blue' : 'text-white'}`} key={post.frontMatter.title}>
-												{post.frontMatter.title}
-											</h3>
-											{/* <h3 className={`text-white text-center text-xl font-bold my-3 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis ${selectedPost === post.frontMatter.title ? 'text-main-blue' : ''}`} key={post.frontMatter.title}>{post.frontMatter.title}</h3> */}
-										</div>
-									</button>
+									</div>
 								</div>
-                            ))}
-                        </div>
-                        
-                        <div className={`absolute w-full h-full left-0 top-0 z-10 before:absolute before:h-full before:w-full before:bg-secundary before:opacity-50 before:-z-10 sm:before:hidden sm:w-1/2 sm:relative sm:h-fit sm:block ${workerInformationVisible ? 'block' : 'hidden'}`}>
-                            <div className="absolute bg-secundary-white w-1/2 mx-auto right-0 left-0 top-1/2 -translate-y-1/2 p-6 rounded-xl min-w-[250px] sm:min-w-0 sm:relative sm:w-full sm-p-0 sm:right-auto sm:left-auto sm:mx-0 sm:translate-y-0 sm:top-0 sm:bg-transparent">
-                                <button onClick={ toggleWorkerInformation } className="h-16 w-16 absolute right-0 top-0 text-4xl font-bold text-secundary sm:hidden">X</button>
-                                <div className="block w-full h-64 -z-10 mx-auto sm:h-96 sm:w-64 sm:absolute">
-									<img
-										src={workerRobloxCharacter}
-										className={`object-cover object-center w-full ${
-											workerRobloxCharacter ?
-											'block'
-											: 'hidden'
-										}`}
-									/>
-                                </div>
+							</div>
+						</div>
+					</div>
+					{/* Background */}
+					
+						{/* <div className='h-screen w-full bg-principal bg-cover bg-center bg-no-repeat'></div>
+						<div className='h-screen w-full bg-principal-shadow bg-cover absolute top-0'></div> */}
+					
+					{/* <div className='relative h-[calc(100vh-1rem)] w-full top-1/2 -translate-y-1/2 max-h-[400px] md:max-h-[500px]'>
+						<a href='https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark' target="_blank" className='mx:auto w-5/6 h-full mx-auto block bg-john-and-mark-logo-name bg-contain bg-center bg-no-repeat sm:aspect-square sm:w-auto'></a>
+						
 
-                                <div className="relative w-full z-50 sm:mt-80 lg:flex lg:flex-row-reverse">
-                                    <ul className='w-full h-fit flex flex-row-reverse gap-2 right-0 lg:w-1/2'>
-                                        {validPlatforms.map(platform => (
-                                            workerSocialMedia && workerSocialMedia[platform] && (
-                                                <li key={platform} className='h-10 w-10 p-1 mt-2 hover:outline-main-blue hover:duration-200'>
-                                                    {renderSocialIcon(platform, workerSocialMedia[platform])}
-                                                </li>
-                                            )
-                                        ))}
-                                    </ul>
+						<a href='https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark' className='group duration-200 bg-main-blue mt-10 h-16 w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all min-[300px]:mt-15 md:mt-20'>
+							<p className='uppercase text-2xl text-white text-center font-black mx-auto px-10 min-[400px]:text-3xl'>Play now</p>
+						</a>
+					</div> */}
 
-                                    <h1 className="text-secundary text-left text-3xl font-black block w-full py-2 lg:w-1/2 sm:overflow-hidden lg:whitespace-nowrap lg:text-ellipsis lg:inline">{workerName}</h1>
-
-                                </div>
-
-                                <div className={`w-full h-[2px] bg-secundary my-2 ${selectedPost !== null ? 'block' : 'hidden'}`}></div>
-                                <h3 className="text-gray text-left text-xl font-bold italic">{workerRole}</h3>
-                                <h3 className="text-secundary text-left text-xl mt-4">{workerDescription}</h3>
-                            </div>
-                        </div>
-                    </div>
+					<div className="hidden sm:block">
+						<SocialMedia />
+					</div>
+					
+					<div className='absolute w-fit bottom-0 right-0 left-0 mx-auto gap-0 space-x-3 flex items-center flex-row mb-6 z-50'>
+						<button className={`aspect-square rounded-full duration-200 ${currentIndex === 0 ? 'bg-main-blue h-4' : 'bg-white h-3'}`} onClick={() => handleButtonClick(0)}></button>
+						<button className={`aspect-square rounded-full duration-200 ${currentIndex === 1 ? 'bg-main-blue h-4' : 'bg-white h-3'}`} onClick={() => handleButtonClick(1)}></button>
+					</div>
 				</div>
-			</div>
 
-            {/* Community */}
-            <div className='bg-secundary-white bg-john-and-mark-parallax bg-cover bg-fixed bg-top'>
-				<div className="bg-community-blue w-full h-full">
-					<div className='w-full mx-auto py-16'>
-						<div className="w-fit mx-auto block items-center">
-							<span className="uppercase text-white text-4xl font-black block text-center mx-auto min-[300px]:text-5xl md:inline">Join Our </span>
-							<span className="uppercase text-main-blue text-4xl font-black text-center block mx-auto min-[300px]:text-5xl md:inline">Community </span>
+
+				{/* -- About */}
+				<div className='bg-primary'>
+					<div className='w-10/12 mx-auto py-24'>
+						<div className='relative w-full h-fit duration-200 mx-auto mt-15'>
+							<a href='https://www.roblox.com/groups/4756258/Broken-Clock' target="_blank" className='relative h-48 w-full block bg-bc-logo-name bg-contain bg-center bg-no-repeat left-0 right-0 mx-auto sm:w-96'></a>
+
+							<h1 className="font-black text-5xl text-center text-secundary uppercase mt-4">
+								Who we are?
+							</h1>
+							<h2 className="font-bold text-2xl text-center text-gray mt-2">
+								We are an independent Roblox game development studio!
+							</h2>
+
+							<div className='w-5/6 mx-auto max-h-84 mt-12 sm:mt-14'>			
+								<a href='https://www.roblox.com/groups/4756258/Broken-Clock' target="_blank" className='duration-200 bg-main-blue w-fit min-w-16 mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
+									<p className='uppercase text-lg text-white text-center font-black px-2 my-4 min-[400px]:text-2xl min-[400px]:mx-10 [400px]:my-4'>Our Roblox Group</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{/* Latest Blog */}
+				<div className='featured-post-bg z-10 relative overflow-hidden bg-secundary-white bg-cover before:absolute before:w-full before:h-full before:bg-latest-blog before:bg-center before:bg-no-repeat before:opacity-10 before:blur-[10px] before:-z-10'>				
+					<div className='w-10/12 mx-auto py-24'>
+						<div className="pb-10">
+							<h1 className="uppercase text-secundary font-black text-5xl pb-2">Featured content</h1>
+							<h2 className="text-gray font-bold text-2xl">Latest news</h2>
 						</div>
 
-						<p className="font-normal text-2xl text-center text-white mt-4 px-4">
-							We look forward to having you with us!
-						</p>
 
-						<div className='w-5/6 mx-auto max-h-84 mt-16 sm:mt-16'>			
-							<a href='https://discord.com/invite/qsaSA45KUX' target="_blank" className='group duration-200 bg-main-blue w-fit min-w-16 mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
-								<p className='uppercase text-lg text-white text-center font-black px-2 my-4 min-[400px]:text-2xl min-[400px]:mx-10 [400px]:my-4'>Join Discord</p>
-							</a>
+
+						<div className='w-5/6 mx-auto md:w-[640px] mt-5'>
+							{/* Content */}
+							<Link href={`/blog/${featuredPost.slug}`} className='featured-post relative w-full h-72 block rounded-lg shadow-latest-blog duration-300 sm:h-96 overflow-hidden before:absolute before:bg-cover before:bg-center before:w-full before:h-full before:duration-300 before:hover:duration-300 before:hover:scale-110'>
+								<style>
+									{`.featured-post:before { background-image: url(${featuredPost.cover}); }`}
+								</style>
+				
+								
+								<div className='relative bg-latest-blog-shadow-content h-72 w-full rounded-lg items-end duration-300 sm:h-96'>
+									<div className='absolute bottom-0 right-0 left-0 mb-4 md:ml-6'>
+										<h2 className='text-white text-2xl font-bold text-center md:text-left'>{featuredPost.title}</h2>
+										<p className='uppercase text-main-blue text-lg font-semibold text-center md:text-left'>Latest Blog</p>
+									</div>
+
+									<div className='group hidden absolute right-0 bottom-0 mr-8 mb-6 cursor-pointer duration-200 bg-main-blue h-12 w-48 min-w-[180px] mx-auto rounded-xl items-center hover:shadow-button hover:duration-200 hover:transition-all md:flex'>
+										<p className='inline uppercase text-lg text-white text-left font-black mx-4'>Read more</p>
+										<div className='inline w-10 h-10 bg-right-arrow bg-center bg-contain'></div>
+									</div>
+								</div>
+
+								{/* <div className='relative top-0 -translate-y-full float-left bg-latest-blog bg-cover bg-center bg-no-repeat w-full h-full duration-300 hover:duration-300 hover:scale-150'></div> */}
+							</Link>
+						</div>
+					</div>
+				</div>
+
+				{/* Games */}
+				<span id='games'></span>
+				<div className='bg-primary'>
+					<div className='w-10/12 mx-auto py-24'>
+						<div className="pb-10">
+							<h1 className="uppercase text-secundary font-black text-5xl pb-2">Our Games</h1>
+							<h2 className="text-gray font-bold text-2xl">Let’s enjoy with us!</h2>
+						</div>
+
+						<div className='w-full h-fit flex flex-wrap'>
+							{/* John and Mark */}
+							<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 2xl:w-1/3 max-w-2xl">
+								<div className="bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games">
+									<a href="https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark-STORY" target="_blank" className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
+										{/* Players online */}
+										<div className="w-24 absolute bottom-0 flex mb-2 ml-4 z-10 pointer-events-none text-white text-lg">
+											<PlayersOnline universeId={4884396315} />
+										</div>
+
+										{/* Year */}
+										<div className='absolute right-0 bottom-0 duration-200 bg-main-orange w-fit mr-6 mb-4 rounded-full flex items-center z-10 pointer-events-none'>
+											<p className='uppercase mx-auto text-base text-white text-center font-bold px-4 py-1'>2023</p>
+										</div>
+										
+										{/* Game cover */}
+										<div className=' bg-john-and-mark bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110'>
+											<div className='relative bg-game-shadow h-full w-full items-end sm:h-full'></div>
+										</div>
+									</a>
+									
+									<div className="w-full h-1/3 xl:h-1/4">
+										<p className="text-secundary text-center text-2xl font-bold my-4 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis">The Adventures Of John And Mark</p>
+										<div className='w-5/6 mx-auto max-h-84'>			
+											<a href='https://www.roblox.com/games/14108196267/The-Adventures-of-John-and-Mark-STORY' target="_blank" className='group duration-200 bg-main-blue w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
+												<p className='uppercase mx-auto text-lg text-white text-center font-black px-2 my-2 min-[400px]:text-2xl'>Play</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							{/* Treacherous Tower */}
+							<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 2xl:w-1/3 max-w-2xl">
+								<div className="bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games">
+									<a href="https://www.roblox.com/games/4237861040/Treacherous-Tower" target="_blank" className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
+										{/* Players online */}
+										<div className="w-24 absolute bottom-0 flex mb-2 ml-4 z-10 pointer-events-none text-white text-lg">
+											<PlayersOnline universeId={1383164929} />
+										</div>
+
+										{/* Year */}
+										<div className='absolute right-0 bottom-0 duration-200 bg-main-orange w-fit mr-6 mb-4 rounded-full flex items-center z-10 pointer-events-none'>
+											<p className='uppercase mx-auto text-base text-white text-center font-bold px-4 py-1'>2019</p>
+										</div>
+
+										{/* Game cover */}
+										<div className=' bg-treacherous-tower bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110'>
+											<div className='relative bg-game-shadow h-full w-full items-end sm:h-full'></div>
+										</div>
+									</a>
+									
+									<div className="w-full h-1/3">
+										<p className="text-secundary text-center text-2xl font-bold my-4 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis">Treacherous Tower</p>
+										<div className='w-5/6 mx-auto max-h-84'>			
+											<a href='https://www.roblox.com/games/4237861040/Treacherous-Tower' target="_blank" className='group duration-200 bg-main-blue w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
+												<p className='uppercase mx-auto text-lg text-white text-center font-black px-2 my-2 min-[400px]:text-2xl'>Play</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							{/* Never Die */}
+							<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 lg:w-1/3 max-w-2xl">
+								<div className="bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games">
+									<a className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
+										{/* Year */}
+										<div className='absolute right-0 bottom-0 duration-200 bg-main-orange w-fit mr-6 mb-4 rounded-full flex items-center z-10 pointer-events-none'>
+											<p className='uppercase mx-auto text-base text-white text-center font-bold px-4 py-1'>2024</p>
+										</div>
+
+										{/* Game cover */}
+										<div className=' bg-never-die bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110'>
+											<div className='relative bg-game-shadow h-full w-full items-end sm:h-full'></div>
+										</div>
+									</a>
+									
+									<div className="w-full h-1/3">
+										<p className="text-secundary text-center text-2xl font-bold my-4 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis">Never Die</p>
+										<div className='w-5/6 mx-auto max-h-84'>			
+											<a className='group duration-200 bg-button-gray w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
+												<p className='uppercase mx-auto text-lg text-white text-center font-black px-2 my-2 min-[400px]:text-2xl'>Soon</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{/* Team */}
+				<div className='relative bg-secundary-white'>
+					<div className='w-10/12 mx-auto py-24'>
+						<div className="pb-10">
+							<h1 className="uppercase text-secundary font-black text-5xl pb-2">The Team</h1>
+							<h2 className="text-gray font-bold text-2xl">Get to know us!</h2>
+						</div>
+
+						<div className="w-full h-fit sm:flex">
+							<div className='w-full h-fit flex flex-wrap sm:w-1/2 sm:min-h-0'>
+								{[...posts].sort((a, b) => a.frontMatter.order - b.frontMatter.order).map((post) => (
+									<div className="w-32 h-32 sm:h-40 m-4 sm:w-40" key={post.frontMatter.title}>
+										<button onClick={() => changeWorker(post.frontMatter)} className={`absolute bg-primary w-32 h-32 rounded-xl overflow-hidden shadow-games sm:w-40 sm:h-40 ${selectedPost === post.frontMatter.title ? 'sm:outline outline-4 sm:outline-main-blue' : ''}`} key={post.frontMatter.title}>
+											{/* ... restante do seu código ... */}
+											<div className="block relative w-full h-full bg-secundary-white overflow-hidden">
+												{/* Worker cover */}
+												<div className='bg-cover bg-no-repeat bg-center duration-300 h-full'>
+													<div alt="Cover Image" className="w-full h-full absolute bg-cover" style={{ backgroundImage: `url(${post.frontMatter.thumbnail})` }} />
+													<div className='relative bg-game-shadow h-full w-full items-end sm:h-full z-10'></div>
+												</div>
+											</div>
+											
+											<div className="absolute flex bottom-0 w-full h-fit before:absolute before:w-full before:h-full before:bg-secundary before:opacity-50 before:-z-10 z-10">
+												<h3 className={`text-center text-xl font-bold my-3 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis ${selectedPost === post.frontMatter.title ? 'text-white sm:text-main-blue' : 'text-white'}`} key={post.frontMatter.title}>
+													{post.frontMatter.title}
+												</h3>
+												{/* <h3 className={`text-white text-center text-xl font-bold my-3 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis ${selectedPost === post.frontMatter.title ? 'text-main-blue' : ''}`} key={post.frontMatter.title}>{post.frontMatter.title}</h3> */}
+											</div>
+										</button>
+									</div>
+								))}
+							</div>
+							
+							<div className={`absolute w-full h-full left-0 top-0 z-10 before:absolute before:h-full before:w-full before:bg-secundary before:opacity-50 before:-z-10 sm:before:hidden sm:w-1/2 sm:relative sm:h-fit sm:block ${workerInformationVisible ? 'block' : 'hidden'}`}>
+								<div className="absolute bg-secundary-white w-1/2 mx-auto right-0 left-0 top-1/2 -translate-y-1/2 p-6 rounded-xl min-w-[250px] sm:min-w-0 sm:relative sm:w-full sm-p-0 sm:right-auto sm:left-auto sm:mx-0 sm:translate-y-0 sm:top-0 sm:bg-transparent">
+									<button onClick={ toggleWorkerInformation } className="h-16 w-16 absolute right-0 top-0 text-4xl font-bold text-secundary sm:hidden">X</button>
+									<div className="block w-full h-64 -z-10 mx-auto sm:h-96 sm:w-64 sm:absolute">
+										<img
+											src={workerRobloxCharacter}
+											className={`object-cover object-center w-full ${
+												workerRobloxCharacter ?
+												'block'
+												: 'hidden'
+											}`}
+										/>
+									</div>
+
+									<div className="relative w-full z-50 sm:mt-80 lg:flex lg:flex-row-reverse">
+										<ul className='w-full h-fit flex flex-row-reverse gap-2 right-0 lg:w-1/2'>
+											{validPlatforms.map(platform => (
+												workerSocialMedia && workerSocialMedia[platform] && (
+													<li key={platform} className='h-10 w-10 p-1 mt-2 hover:outline-main-blue hover:duration-200'>
+														{renderSocialIcon(platform, workerSocialMedia[platform])}
+													</li>
+												)
+											))}
+										</ul>
+
+										<h1 className="text-secundary text-left text-3xl font-black block w-full py-2 lg:w-1/2 sm:overflow-hidden lg:whitespace-nowrap lg:text-ellipsis lg:inline">{workerName}</h1>
+
+									</div>
+
+									<div className={`w-full h-[2px] bg-secundary my-2 ${selectedPost !== null ? 'block' : 'hidden'}`}></div>
+									<h3 className="text-gray text-left text-xl font-bold italic">{workerRole}</h3>
+									<h3 className="text-secundary text-left text-xl mt-4">{workerDescription}</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{/* Community */}
+				<div className='bg-secundary-white bg-john-and-mark-parallax bg-cover bg-fixed bg-top'>
+					<div className="bg-community-blue w-full h-full">
+						<div className='w-full mx-auto py-16'>
+							<div className="w-fit mx-auto block items-center">
+								<span className="uppercase text-white text-4xl font-black block text-center mx-auto min-[300px]:text-5xl md:inline">Join Our </span>
+								<span className="uppercase text-main-blue text-4xl font-black text-center block mx-auto min-[300px]:text-5xl md:inline">Community </span>
+							</div>
+
+							<p className="font-normal text-2xl text-center text-white mt-4 px-4">
+								We look forward to having you with us!
+							</p>
+
+							<div className='w-5/6 mx-auto max-h-84 mt-16 sm:mt-16'>			
+								<a href='https://discord.com/invite/qsaSA45KUX' target="_blank" className='group duration-200 bg-main-blue w-fit min-w-16 mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
+									<p className='uppercase text-lg text-white text-center font-black px-2 my-4 min-[400px]:text-2xl min-[400px]:mx-10 [400px]:my-4'>Join Discord</p>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-        </div>
+		</>
     );
 };

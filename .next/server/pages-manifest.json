@@ -3,5 +3,8 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/blog": "pages/blog.js",
-  "/blog/[slug]": "pages/blog/[slug].js"
+  "/": "pages/index.js",
+  "/api/players-online/[universeId]": "pages/api/players-online/[universeId].js",
+  "/blog/[slug]": "pages/blog/[slug].js",
+  "/contact": "pages/contact.js"
 }

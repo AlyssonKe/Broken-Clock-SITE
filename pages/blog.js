@@ -1,15 +1,19 @@
+import CustomHead from '/components/CustomHead';
+
 import fs from 'fs';
 import path from "path";
-import Head from 'next/head';
 import Link from 'next/link';
 import matter from "gray-matter";
 
 // The Blog Page Content
 export default function Blog({posts}){
     return <>
-        <Head>
-            <title>Broken Clock Blog</title>
-        </Head>
+        <CustomHead 
+            title="Broken Clock Blogs"
+            description="Check out the blogs posted by the developers and find out what's going on inside Broken Clock."
+            author="Duelan"
+            cover="/images/broken-clock-logo-name.png"
+        />
 
         <Link href={"/"} className='bg-main-orange w-full h-full'></Link>
 

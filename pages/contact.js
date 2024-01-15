@@ -1,4 +1,5 @@
-import Head from 'next/head';
+import CustomHead from '/components/CustomHead';
+
 import React, { useState, useEffect  } from 'react';
 import Link from 'next/link'
 
@@ -85,9 +86,12 @@ export default function Home () {
 
     return (
 		<>
-			<Head>
-				<title>Broken Clock Contact</title>
-			</Head>
+			<CustomHead 
+				title="Broken Clock Contact"
+				description="Contact the Broken Clock team to solve problems or send suggestions."
+				author="Duelan"
+				cover="/images/broken-clock-logo-name.png"
+			/>
 
 			<div className="flex flex-wrap">
 				<div className="w-full h-1/3 right-0 bg-secundary-white -mt-20 max-h-[1024px] md:w-1/2 md:h-screen">
