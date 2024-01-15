@@ -252,7 +252,7 @@ export default function Home ({ posts, featuredPost }) {
 						</a>
 					</div> */}
 
-					<div className="hidden sm:block">
+					<div className="hidden sm:block z-50">
 						<SocialMedia />
 					</div>
 					
