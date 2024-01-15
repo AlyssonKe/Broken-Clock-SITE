@@ -141,7 +141,7 @@ export default function Home ({ posts, featuredPost }) {
 	const toggleWorkerInformation = () => {
 		setWorkerInformationVisible(!workerInformationVisible);
 	};
-	
+
 	function smoothScroll(element, target, duration) {
 		let start = element.scrollLeft,
 			change = target - start,
@@ -164,7 +164,7 @@ export default function Home ({ posts, featuredPost }) {
 		clearInterval(scrollInterval.current);
 		scrollInterval.current = setInterval(() => {
 		setCurrentIndex(prevIndex => (prevIndex + 1) % 2); // Assumindo 2 elementos
-		}, 5000000); // Muda o item a cada 5 segundos
+		}, 5000); // Muda o item a cada 5 segundos
 	};
 	
 	useEffect(() => {

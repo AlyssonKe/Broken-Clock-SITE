@@ -23,23 +23,23 @@ export default function PostPage({
     return (
         <>
             <Head>
+                <title>{headerTitle}</title>
+
                 <meta charSet="utf-8" />
                 <meta name="robots" content="index, follow" />
                 <meta name="description" content={description} />
                 <meta name="author" content={author} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-                <title>{headerTitle}</title>
-
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://brokenclock.fun" />
-                <meta property="og:title" content={headerTitle} />
+                <meta property="og:title" content={"Broken Clock | " + headerTitle} />
                 <meta property="og:description" content={description} />
                 <meta property="og:image" content={cover} />
                 
                 {/* Twitter Card tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={headerTitle} />
+                <meta name="twitter:title" content={"Broken Clock | " + headerTitle} />
                 <meta name="twitter:description" content={description} />
                 <meta name="twitter:image" content={cover} />
             </Head>
