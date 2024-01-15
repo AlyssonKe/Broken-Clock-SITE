@@ -19,7 +19,7 @@ export default function ScrollButton({targetId, title, targetPage}) {
   };
 
   return (
-    <button onClick={handleClick}>
+    <button onClick={handleClick} className='mx-auto'>
       {title}
     </button>
   );

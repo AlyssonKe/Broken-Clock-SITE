@@ -1,5 +1,6 @@
 ---
 title: "First blog of the site!"
+headerTitle: "First Blog"
 date: January 14, 2024
 cover: /images/blog-post-covers/first-blog.png
 description: Check out our website and find out more about our studio and our future plans!

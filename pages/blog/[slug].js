@@ -1,3 +1,4 @@
+import Head from "next/head"
 import fs from 'fs'
 import path from 'path'
 import matter from "gray-matter"
@@ -5,7 +6,7 @@ import { marked } from 'marked'
 import React, { useEffect } from 'react';
 
 export default function PostPage({
-    frontmatter: {title, date, cover, description, author, category, tags},
+    frontmatter: {title, headerTitle, date, cover, description, author, category, tags},
     slug,
     content
 }) {
@@ -21,6 +22,28 @@ export default function PostPage({
 
     return (
         <>
+            <Head>
+                <meta charSet="utf-8" />
+                <meta name="robots" content="index, follow" />
+                <meta name="description" content={description} />
+                <meta name="author" content={author} />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+                <title>{headerTitle}</title>
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://brokenclock.fun" />
+                <meta property="og:title" content={headerTitle} />
+                <meta property="og:description" content={description} />
+                <meta property="og:image" content={cover} />
+                
+                {/* Twitter Card tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={headerTitle} />
+                <meta name="twitter:description" content={description} />
+                <meta name="twitter:image" content={cover} />
+            </Head>
+
             <div className='prose text-center mx-auto w-10/12 max-w-full py-16 text-secundary sm:w-10/12 sm:py-20 lg:py-24'>
                 <div className='w-full secundaryColor lg:w-3/5'>
                     <div dangerouslySetInnerHTML={{__html: marked(content) }}></div>

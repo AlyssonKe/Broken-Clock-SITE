@@ -52,8 +52,8 @@ module.exports = {
         'bc-logo-name-black': "url('../public/images/broken-clock-logo-name-black.png')",
 
         // Home
-        'john-and-mark-logo-name': "url('../public/images/home/john-and-mark-logo-name.png')",
-        'john-and-mark-bg': "url('../public/images/home/john-and-mark-bg.png')",
+        'home-page1': "url('../public/images/home/page1.png')",
+        'home-page2': "url('../public/images/home/page2.png')",
         
         // Blog
         'latest-blog-shadow-primary': "linear-gradient(255deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.75) 96.59%)",
@@ -68,6 +68,7 @@ module.exports = {
         'contact': "url('../public/images/contact.png')",
 
         // Others
+        'john-and-mark-logo-name': "url('../public/images/home/john-and-mark-logo-name.png')",
         'menu-button': "url('../public/images/menu-button.svg')",
       },
 

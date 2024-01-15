@@ -8,12 +8,23 @@ export default function MyApp({ Component, pageProps}) {
             <Head>
                 <meta charSet="utf-8" />
                 <meta name="robots" content="index, follow" />
-                <meta name="description" content="Broken Clock official website" />
+                <meta name="description" content="Official website of Broken Clock, an indie game development studio on the Roblox platform." />
                 <meta name="author" content="Duelan_BR" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
                 <title>Broken Clock</title>
 
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://brokenclock.fun" />
+                <meta property="og:title" content="Broken Clock" />
+                <meta property="og:description" content="Official website of Broken Clock." />
+                <meta property="og:image" content="public/images/broken-clock-logo-name.png" />
+                
+                {/* Twitter Card tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Broken Clock" />
+                <meta name="twitter:description" content="Official website of Broken Clock." />
+                <meta name="twitter:image" content="public/images/broken-clock-logo-name.png" />
             </Head>
 
             <Layout>

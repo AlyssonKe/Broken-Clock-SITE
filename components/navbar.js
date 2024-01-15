@@ -39,7 +39,7 @@ export default function Navbar() {
                         </li>
 
                         <li className='group'>
-                            <div className='h-16 w-full flex items-center md:h-20 hover:text-main-blue hover:duration-200'>
+                            <div className='h-16 w-full flex items-center text-center md:h-20 hover:text-main-blue hover:duration-200'>
                                 <ScrollButton targetId="games" targetPage="/" title="GAMES" />
                             </div>
                         </li>
