@@ -46,7 +46,7 @@ export default function Navbar() {
 
                         <li className='group'>
                             <div className='h-16 w-full flex items-center md:h-20'>
-                                <Link href='/blog' className='mx-auto group-hover:text-main-blue group-hover:duration-200'>Blog</Link>
+                                <Link href='/blog' className='mx-auto group-hover:text-main-blue group-hover:duration-200'>Blogs</Link>
                             </div>
                         </li>
 

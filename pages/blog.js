@@ -9,7 +9,7 @@ import matter from "gray-matter";
 export default function Blog({posts}){
     return <>
         <CustomHead 
-            title="Broken Clock Blogs"
+            title="Blogs"
             description="Check out the blogs posted by the developers and find out what's going on inside Broken Clock."
             author="Duelan"
             cover="/images/broken-clock-logo-name.png"

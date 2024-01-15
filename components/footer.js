@@ -24,7 +24,7 @@ export default function Footer () {
                             <ScrollButton targetId="games" targetPage="/" title="Games" />
                         </li>
                         <li className='my-2'>
-                            <Link href={"/blog"} className='hover:text-main-blue hover:duration-200'>Blog</Link>
+                            <Link href={"/blog"} className='hover:text-main-blue hover:duration-200'>Blogs</Link>
                         </li>
                         <li className='my-2'>
                             <Link href={"/contact"} className='hover:text-main-blue hover:duration-200'>Contact</Link>

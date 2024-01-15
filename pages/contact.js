@@ -87,7 +87,7 @@ export default function Home () {
     return (
 		<>
 			<CustomHead 
-				title="Broken Clock Contact"
+				title="Contact"
 				description="Contact the Broken Clock team to solve problems or send suggestions."
 				author="Duelan"
 				cover="/images/broken-clock-logo-name.png"
