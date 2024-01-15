@@ -14,7 +14,7 @@ tags:
 
 <h3 style>Welcome everyone to our first blog on the website!</h3>
 
-We have a lof of things to show you and present some of our plans for this year and future new projects and updates to existing games like [The Adventures Of John And Mark](https://www.roblox.com/games/14108196267) and [Treacherous Tower](https://www.roblox.com/games/4237861040).
+We have many things to show and present some of our plans for this year, new projects and updates for existing games, such as [The Adventures Of John And Mark](https://www.roblox.com/games/14108196267). Regarding [Treacherous Tower](https://www.roblox.com/games/4237861040), we would like to clarify a few things about the future of the game.
 
 <p align="center" style="width: 100%;" >
   <img src="/images/blog/first-blog/image1.png" style="width: 100%; object-fit: cover" alt="Texto Alternativo">

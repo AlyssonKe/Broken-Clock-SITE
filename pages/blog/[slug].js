@@ -21,8 +21,8 @@ export default function PostPage({
 
     return (
         <>
-            <div className='prose text-center mx-auto w-10/12 max-w-full py-24 text-secundary'>
-                <div className='w-3/5 text-red secundaryColor'>
+            <div className='prose text-center mx-auto w-10/12 max-w-full py-24 text-secundary sm:w-10/12'>
+                <div className='w-full secundaryColor lg:w-3/5'>
                     <div dangerouslySetInnerHTML={{__html: marked(content) }}></div>
                 </div>
             </div>
