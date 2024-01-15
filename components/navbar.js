@@ -13,14 +13,14 @@ export default function Navbar() {
     };
 
     return (
-        <header id="header" className='h-20 w-full bg-primary border-b-[1px] border-gray sticky top-0 z-50 items-center duration-200'>
+        <header id="header" className='h-20 w-full bg-secundary border-b-[1px] border-gray sticky top-0 z-50 items-center duration-200'>
             <nav>
 
                 {/* <div className='bg-white h-20 w-20'>
                     Ata
                 </div> */}
 
-                <div className={`h-20 w-full float-left bg-primary absolute z-50 items-center sm:hidden ${menuVisible ? 'block' : 'hidden'} transition-all duration-300`}></div>
+                <div className={`h-20 w-full float-left bg-secundary absolute z-50 items-center sm:hidden ${menuVisible ? 'block' : 'hidden'} transition-all duration-300`}></div>
 
                 {/* Logo */}
                 <Link href='/' className='absolute bg-bc-logo-name bg-center bg-contain bg-no-repeat w-24 h-12 ml-4 mt-4 z-50 min-[350px]:right-0 min-[350px]:left-0 min-[350px]:mx-auto md:w-32 sm:ml-8 sm:right-auto sm:left-auto lg:ml-16'></Link>
@@ -32,7 +32,7 @@ export default function Navbar() {
 
                 <div className={`h-screen w-full backdrop-blur-2xl absolute top-0 before:absolute before:h-full before:w-full before:bg-secundary before:opacity-80 sm:absolute sm:h-full sm:before:opacity-0 sm:backdrop-blur-none ${menuVisible ? 'block' : 'hidden'} duration-300 transition-all sm:block sm:right-0 sm:duration-0`}>
                     <ul className='absolute top-1/2 -translate-y-1/2 w-fit mx-auto right-0 left-0 space-x-0 space-y-4 gap-6 uppercase text-lg text-white font-semibold sm:mr-8 md:text-base lg:mr-16 sm:flex sm:space-x-1 sm:space-y-0'>
-                        <li className='group'>
+                        <li className='group relative'>
                             <div className='h-16 w-full flex items-center md:h-20'>
                                 <Link href='/' className='mx-auto group-hover:text-main-blue group-hover:duration-200'>Home</Link>
                             </div>
@@ -40,7 +40,7 @@ export default function Navbar() {
 
                         <li className='group'>
                             <div className='h-16 w-full flex items-center md:h-20 hover:text-main-blue hover:duration-200'>
-                                <ScrollButton targetId="games" title="GAMES" />
+                                <ScrollButton targetId="games" targetPage="/" title="GAMES" />
                             </div>
                         </li>
 

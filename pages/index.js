@@ -185,13 +185,13 @@ export default function Home ({ posts, featuredPost }) {
 
 
             {/* -- About */}
-            <div className='bg-secundary'>
+            <div className='bg-primary'>
 				<div className='w-10/12 mx-auto py-24'>
 					<div className='relative w-full h-fit duration-200 mx-auto mt-15'>
 						<a href='https://www.roblox.com/groups/4756258/Broken-Clock' target="_blank" className='relative h-48 w-full block bg-bc-logo-name bg-contain bg-center bg-no-repeat left-0 right-0 mx-auto sm:w-96'></a>
 
-						<h1 className="font-black text-5xl text-center text-white uppercase mt-4">
-							Who we are
+						<h1 className="font-black text-5xl text-center text-secundary uppercase mt-4">
+							Who we are?
 						</h1>
 						<h2 className="font-bold text-2xl text-center text-gray mt-2">
 							We are an independent Roblox game development studio!
@@ -207,62 +207,48 @@ export default function Home ({ posts, featuredPost }) {
 			</div>
 
 			{/* Latest Blog */}
-			<div className='featured-post-bg z-10 relative overflow-hidden bg-primary bg-cover before:absolute before:w-full before:h-full before:bg-latest-blog before:bg-center before:bg-no-repeat before:opacity-10 before:blur-[10px] before:-z-10'>
-				<style>
-					{`.featured-post-bg:before { background-image: url(${featuredPost.cover}); }`}
-				</style>
-					
-				<div className='bg-latest-blog-shadow-primary bg-cover bg-left-bottom bg-no-repeat'>
-					<div className='bg-latest-blog-shadow-secundary bg-cover bg-left-top bg-no-repeat'>
-						<div className='h-[10vh] w-full '> </div>
-						<div className='w-full'>
+			<div className='featured-post-bg z-10 relative overflow-hidden bg-secundary-white bg-cover before:absolute before:w-full before:h-full before:bg-latest-blog before:bg-center before:bg-no-repeat before:opacity-10 before:blur-[10px] before:-z-10'>				
+				<div className='w-10/12 mx-auto py-24'>
+					<div className="pb-10">
+						<h1 className="uppercase text-secundary font-black text-5xl pb-2">Featured content</h1>
+						<h2 className="text-gray font-bold text-2xl">Latest news</h2>
+					</div>
 
-							<div className='w-5/6 mx-auto md:w-[640px]'>
-								<h1 className="font-black text-5xl text-center text-white uppercase mt-4">
-									Featured content
-								</h1>
-								<h2 className="font-bold text-2xl text-center text-main-blue mt-2">
-									Latest News
-								</h2>
 
-								<div className='bg-line h-0.5 w-5/6 mx-auto mt-6 mb-14'></div>
 
-								{/* Content */}
-								<Link href={`/blog/${featuredPost.slug}`} className='featured-post relative w-full h-72 block rounded-lg shadow-latest-blog duration-300 sm:h-96 overflow-hidden before:absolute before:bg-cover before:bg-center before:w-full before:h-full before:duration-300 before:hover:duration-300 before:hover:scale-110'>
-									<style>
-										{`.featured-post:before { background-image: url(${featuredPost.cover}); }`}
-									</style>
-					
-									
-									<div className='relative bg-latest-blog-shadow-content h-72 w-full rounded-lg items-end duration-300 sm:h-96'>
-										<div className='absolute bottom-0 right-0 left-0 mb-4 md:ml-6'>
-											<h2 className='text-white text-2xl font-black text-center md:text-left'>{featuredPost.title}</h2>
-											<p className='uppercase text-main-blue text-lg font-bold text-center md:text-left'>Latest Blog</p>
-										</div>
+					<div className='w-5/6 mx-auto md:w-[640px] mt-5'>
+						{/* Content */}
+						<Link href={`/blog/${featuredPost.slug}`} className='featured-post relative w-full h-72 block rounded-lg shadow-latest-blog duration-300 sm:h-96 overflow-hidden before:absolute before:bg-cover before:bg-center before:w-full before:h-full before:duration-300 before:hover:duration-300 before:hover:scale-110'>
+							<style>
+								{`.featured-post:before { background-image: url(${featuredPost.cover}); }`}
+							</style>
+			
+							
+							<div className='relative bg-latest-blog-shadow-content h-72 w-full rounded-lg items-end duration-300 sm:h-96'>
+								<div className='absolute bottom-0 right-0 left-0 mb-4 md:ml-6'>
+									<h2 className='text-white text-2xl font-black text-center md:text-left'>{featuredPost.title}</h2>
+									<p className='uppercase text-main-blue text-lg font-bold text-center md:text-left'>Latest Blog</p>
+								</div>
 
-										<div className='group hidden absolute right-0 bottom-0 mr-8 mb-6 cursor-pointer duration-200 bg-main-blue h-12 w-48 min-w-[180px] mx-auto rounded-xl items-center hover:shadow-button hover:duration-200 hover:transition-all md:flex'>
-											<p className='inline uppercase text-lg text-white text-left font-bold mx-4'>Read more</p>
-											<div className='inline w-10 h-10 bg-right-arrow bg-center bg-contain'></div>
-										</div>
-									</div>
-
-									{/* <div className='relative top-0 -translate-y-full float-left bg-latest-blog bg-cover bg-center bg-no-repeat w-full h-full duration-300 hover:duration-300 hover:scale-150'></div> */}
-								</Link>
-								
+								<div className='group hidden absolute right-0 bottom-0 mr-8 mb-6 cursor-pointer duration-200 bg-main-blue h-12 w-48 min-w-[180px] mx-auto rounded-xl items-center hover:shadow-button hover:duration-200 hover:transition-all md:flex'>
+									<p className='inline uppercase text-lg text-white text-left font-bold mx-4'>Read more</p>
+									<div className='inline w-10 h-10 bg-right-arrow bg-center bg-contain'></div>
+								</div>
 							</div>
-						</div>
-						<div className='h-[10vh] w-full'> </div>
+
+							{/* <div className='relative top-0 -translate-y-full float-left bg-latest-blog bg-cover bg-center bg-no-repeat w-full h-full duration-300 hover:duration-300 hover:scale-150'></div> */}
+						</Link>
 					</div>
 				</div>
 			</div>
 
             {/* Games */}
 			<span id='games'></span>
-            <div className='bg-secundary'>
+            <div className='bg-primary'>
 				<div className='w-10/12 mx-auto py-24'>
 					<div className="pb-10">
-						<h1 className="uppercase text-white font-black text-5xl pb-2">Our Games</h1>
-						<h2 className="text-main-blue font-bold text-2xl">Let’s enjoy with us!</h2>
+						<h1 className="uppercase text-secundary font-black text-5xl pb-2">Our Games</h1>
+						<h2 className="text-gray font-bold text-2xl">Let’s enjoy with us!</h2>
 					</div>
 
 					<div className='w-full h-fit flex flex-wrap'>
@@ -362,7 +348,7 @@ export default function Home ({ posts, featuredPost }) {
 				<div className='w-10/12 mx-auto py-24'>
 					<div className="pb-10">
 						<h1 className="uppercase text-secundary font-black text-5xl pb-2">The Team</h1>
-						<h2 className="text-main-blue font-bold text-2xl">Get to know us!</h2>
+						<h2 className="text-gray font-bold text-2xl">Get to know us!</h2>
 					</div>
 
                     <div className="w-full h-fit sm:flex">
@@ -420,7 +406,7 @@ export default function Home ({ posts, featuredPost }) {
                                 </div>
 
                                 <div className={`w-full h-[2px] bg-secundary my-2 ${selectedPost !== null ? 'block' : 'hidden'}`}></div>
-                                <h3 className="text-secundary-gray text-left text-xl font-bold italic">{workerRole}</h3>
+                                <h3 className="text-gray text-left text-xl font-bold italic">{workerRole}</h3>
                                 <h3 className="text-secundary text-left text-xl mt-4">{workerDescription}</h3>
                             </div>
                         </div>

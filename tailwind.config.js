@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'primary': '#171717',
+      'primary': '#FEFEFE',
       'secundary': '#1C1C1C',
       'main-blue': '#0085FF',
       'main-orange': '#FF6919',
@@ -14,14 +14,15 @@ module.exports = {
       'primary-white': '#FEFEFE',
       'secundary-white': '#EAEDEF',
 
-      'primary-gray': '#B0B0B0',
-      'secundary-gray': '#656565',
+      'secundary-gray': '#B0B0B0',
 
       'white': '#FFFFFF',
-      'gray': '#B0B0B0',
+      'gray': '#656565',
       'button-gray': '#828282',
 
-      'community-blue': '#001E23A6'
+      'community-blue': '#001E23A6',
+
+      'red': '#ff0a2f'
     },
 
     extend: {
@@ -75,7 +76,7 @@ module.exports = {
       },
 
       boxShadow: {
-        'games': '0px 2px 6px 4px rgba(50, 50, 50, 0.2)',
+        'games': '0px 2px 6px 4px rgba(100, 100, 100, 0.1)',
         'button': '0px 0px 10px 0px rgba(0, 137, 255, 0)',
         'latest-blog': '0px 0px 20px 0px rgba(0, 0, 0, 0.50)',
       },

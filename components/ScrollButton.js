@@ -1,22 +1,21 @@
-import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-const ScrollButton = ({ targetId, title }) => {
+export default function ScrollButton({targetId, title, targetPage}) {
+  const router = useRouter();
+
   const handleClick = () => {
+    if (router.pathname === targetPage) {
+      scrollToTarget();
+    } else {
+      router.push(`${targetPage}#${targetId}`).then();
+    }
+  };
+
+  const scrollToTarget = () => {
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleScroll = () => {
-    // Adicione lógica adicional, se necessário, com base no scroll da página
   };
 
   return (
@@ -24,6 +23,4 @@ const ScrollButton = ({ targetId, title }) => {
       {title}
     </button>
   );
-};
-
-export default ScrollButton;
+}; 

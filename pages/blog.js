@@ -13,15 +13,15 @@ export default function Blog({posts}){
 
         <Link href={"/"} className='bg-main-orange w-full h-full'></Link>
 
-        <div className="bg-primary w-full h-screen -mt-20 py-20">
-            <div className="w-10/12 mx-auto py-24">
+        <div className="bg-secundary-white w-full h-fit -mt-20">
+            <div className="w-10/12 mx-auto pt-36 pb-8 md:py-48">
                 <div className="pb-10">
-                    <h1 className="uppercase text-white font-black text-5xl pb-2">Last news</h1>
-                    <h2 className="text-main-blue font-bold text-2xl">Find out what's going on!</h2>
+                    <h1 className="uppercase text-secundary font-black text-5xl pb-2">Last news</h1>
+                    <h2 className="text-gray font-bold text-2xl">Find out what's going on!</h2>
                 </div>
 
                 <div className="w-full h-fit">
-                    <div className="w-full h-fit flex-wrap sm:min-h-0">
+                    <div className="w-full h-fit flex-wrap">
                         {posts.sort((a, b) => b.frontmatter.order - a.frontmatter.order)
                             .map(post => {
                             // Extract slug and frontmatter
@@ -31,8 +31,8 @@ export default function Blog({posts}){
 
                             // JSX for individual blog listing
                             return (
-                                <article key={slug} className="w-1/4 h-80 px-3 py-3">
-                                    <div className='bg-secundary-white w-full h-full rounded-xl overflow-hidden shadow-games'>
+                                <article key={slug} className="w-full h-80 px-3 py-3 sm:w-1/2 lg:w-1/3">
+                                    <div className='bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games'>
                                         <Link href={`/blog/${slug}`} className=' w-1/3 h-80 bg-main-blue'>
                                             <div className='w-full h-full'>
                                                 <div className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
@@ -49,7 +49,9 @@ export default function Blog({posts}){
 
                                                 <div className="w-full h-1/3">
                                                     <p className="text-secundary text-center text-2xl font-bold py-2 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis">{title}</p>
-                                                    <p className="h-full w-11/12 mx-auto text-secundary text-center text-sm px-2">{description}</p>
+                                                    <p className="multi-line-ellipsis w-11/12 mx-auto text-secundary text-center text-sm px-2">
+                                                        {description}
+                                                    </p>
                                                 </div>
                                             </div>
                                         </Link>

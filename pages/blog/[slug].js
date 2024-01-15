@@ -2,17 +2,29 @@ import fs from 'fs'
 import path from 'path'
 import matter from "gray-matter"
 import { marked } from 'marked'
-import Link from 'next/link'
+import React, { useEffect } from 'react';
 
 export default function PostPage({
     frontmatter: {title, date, cover, description, author, category, tags},
     slug,
     content
 }) {
+    useEffect(() => {
+        // Seleciona todos os links dentro do conteúdo do blog e adiciona target="_blank" e rel="noopener noreferrer"
+        const links = document.querySelectorAll('.prose a');
+        links.forEach(link => {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
+          link.style.color = '#0085FF';
+        });
+      }, []);
+
     return (
         <>
-            <div className='prose text-center mx-auto w-10/12 max-w-full'>
-                <div dangerouslySetInnerHTML={{__html: marked(content) }}></div>
+            <div className='prose text-center mx-auto w-10/12 max-w-full py-24 text-secundary'>
+                <div className='w-3/5 text-red secundaryColor'>
+                    <div dangerouslySetInnerHTML={{__html: marked(content) }}></div>
+                </div>
             </div>
         </>
     )

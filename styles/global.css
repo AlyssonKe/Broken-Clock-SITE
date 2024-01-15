@@ -36,14 +36,24 @@
     opacity: 1; /* Ajuste a transparência conforme necessário */
 }
 
-.featured-post-bg:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    opacity: 0.2; /* Ajuste a transparência conforme necessário */
-    z-index: -1; /* Coloca o pseudoelemento atrás do conteúdo */
+.multi-line-ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Número de linhas que você deseja */
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+.gray {
+    color: #656565
+}
+
+.secundaryColor,
+.secundaryColor h1,
+.secundaryColor h2,
+.secundaryColor h3,
+.secundaryColor h4,
+.secundaryColor h5,
+.secundaryColor h6  {
+    color: #1C1C1C;
 }

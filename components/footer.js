@@ -10,7 +10,7 @@ export default function Footer () {
       };
 
     return (
-        <footer className='w-full bg-primary border-t-[1px] border-gray bg-footer-shadow -z-50'>
+        <footer className='w-full bg-secundary border-t-[1px] border-gray bg-footer-shadow -z-50'>
             <div className='w-9/12 h-fit mx-auto py-10 sm:pt-14 min-[400px]:py-4'>
                 <Link href='/' className='block mx-auto bg-bc-logo-name bg-center bg-contain bg-no-repeat w-full h-32 mt-6 mb-12 md:w-64 md:h-32 sm:mt-0'></Link>
 
@@ -21,13 +21,13 @@ export default function Footer () {
                             <Link href={"/"} className='hover:text-main-blue hover:duration-200'>About</Link>
                         </li>
                         <li className='my-2 hover:text-main-blue hover:duration-200'>
-                            <ScrollButton targetId="games" title="Games" />
+                            <ScrollButton targetId="games" targetPage="/" title="Games" />
                         </li>
                         <li className='my-2'>
-                            <Link href={"/"} className='hover:text-main-blue hover:duration-200'>Blog</Link>
+                            <Link href={"/blog"} className='hover:text-main-blue hover:duration-200'>Blog</Link>
                         </li>
                         <li className='my-2'>
-                            <Link href={"/"} className='hover:text-main-blue hover:duration-200'>Contact</Link>
+                            <Link href={"/contact"} className='hover:text-main-blue hover:duration-200'>Contact</Link>
                         </li>
                     </ul>
                 </div>
