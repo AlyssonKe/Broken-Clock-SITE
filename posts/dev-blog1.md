@@ -1,6 +1,6 @@
 ---
 title: "Dev Blog: What's to come!"
-headerTitle: "John and Mark Biggest Update"
+headerTitle: "Dev Blog: What's to come!"
 date: February 29, 2024
 cover: /images/blog-post-covers/dev-blog1.png
 description: Check out our website and find out more about our studio and our future plans!
