@@ -23,7 +23,7 @@ export default function Navbar() {
                 <div className={`h-20 w-full float-left bg-secundary absolute z-50 items-center sm:hidden ${menuVisible ? 'block' : 'hidden'} transition-all duration-300`}></div>
 
                 {/* Logo */}
-                <Link href='/' className='absolute bg-bc-logo-name bg-center bg-contain bg-no-repeat w-24 h-12 ml-4 mt-4 z-50 min-[350px]:right-0 min-[350px]:left-0 min-[350px]:mx-auto md:w-32 sm:ml-8 sm:right-auto sm:left-auto lg:ml-16'></Link>
+                <Link href='/' className='absolute bg-bc-logo-name bg-center bg-contain bg-no-repeat w-24 h-12 ml-4 mt-4 z-50 min-[500px]:right-0 min-[500px]:left-0 min-[500px]:mx-auto md:w-32 sm:ml-8 sm:right-auto sm:left-auto lg:ml-16'></Link>
                 
                 {/* Open menu button */}
                 <button onClick={toggleMenu} href='/' className='absolute bg-menu-button right-0 bg-contain bg-no-repeat w-10 h-10 mr-3 top-1/2 -translate-y-1/2 inline z-50 min-[200px]:mr-10 sm:hidden'></button>

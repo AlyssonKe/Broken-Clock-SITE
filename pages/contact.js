@@ -3,7 +3,7 @@ import CustomHead from '/components/CustomHead';
 import React, { useState, useEffect  } from 'react';
 import Link from 'next/link'
 
-export default function Home () {
+export default function Contact () {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [formData, setFormData] = useState({
         subject: '',
@@ -27,17 +27,11 @@ export default function Home () {
 		
 		const isFormFilled = formData.subject && formData.name && formData.email && formData.message;
 
-		// Verifica se o email é válido
+		// Check if the email is valid and the form is filled
 		const isEmailValid = validateEmail(formData.email);
 	
 		if (!isFormFilled || !isEmailValid) {
-			if (!isFormFilled) {
-				console.log("Please fill in all the fields.");
-			}
-			if (!isEmailValid) {
-				console.log("Email is not valid");
-			}
-			return; // Impede o envio do formulário
+			return;
 		}
 
 		setIsSubmitting(true);
@@ -61,11 +55,6 @@ export default function Home () {
 			});
 
 			setFormSubmitted(true);
-			console.log("Message sent successfully.");
-
-		}
-		if (!response.ok) {
-			console.log("Error sending message")
 		}
     };
 
@@ -94,7 +83,7 @@ export default function Home () {
 			/>
 
 			<div className="flex flex-wrap">
-				<div className="w-full h-1/3 right-0 bg-secundary-white -mt-20 max-h-[1024px] md:w-1/2 md:h-screen">
+				<div className="w-full h-1/3 right-0 -mt-20 max-h-[1024px] md:w-1/2 md:h-screen">
 					<div className="w-10/12 mx-auto pt-36 pb-8 md:py-48 md:w-8/12">
 						<div className="pb-10">
 							<h1 className="uppercase text-secundary font-black text-5xl pb-2">Contact</h1>
@@ -135,7 +124,7 @@ export default function Home () {
 										<h2 className="text-secundary-gray font-bold text-2xl text-center">We will contact you as soon as possible!</h2>
 										<div className='w-5/6 mx-auto max-h-84 mt-12 sm:mt-14'>			
 											<Link href='/' className='group duration-200 bg-main-blue h-16 w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:duration-200 hover:transition-all'>
-												<p className='uppercase text-xl text-white text-center font-black mx-auto px-16 min-[400px]:text-2xl'>Back Home</p>
+												<p className='uppercase text-xl text-white text-center font-black mx-auto px-10 min-[400px]:text-2xl'>Return Home</p>
 											</Link>
 										</div>
 									</div>

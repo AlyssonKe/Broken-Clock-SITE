@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 const CustomHead = ({ title, description, author, cover, keywords }) => (
   <Head>
-    <title>{title ? `Broken Clock ${title}` : 'Broken Clock'}</title>
+    <title>{title ? `${title}` : 'Broken Clock'}</title>
 
     <meta name="description" content={description} />
     <meta name="author" content={author} />

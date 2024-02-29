@@ -13,7 +13,7 @@ tags:
 
 # First Blog
 
-<h3 style>Welcome everyone to our first blog on the website!</h3>
+### Welcome everyone to our first blog on the website!
 
 We have many things to show and present some of our plans for this year, new projects and updates for existing games, such as [The Adventures Of John And Mark](https://www.roblox.com/games/14108196267). Regarding [Treacherous Tower](https://www.roblox.com/games/4237861040), we would like to clarify a few things about the future of the game.
 
@@ -25,7 +25,7 @@ We have many things to show and present some of our plans for this year, new pro
 
 We're really looking forward to this year, and we hope to continue having you with us, it means a lot to us!
 
-<h3>Future games!</h3>
+### Future games!
 
 <h4 class="gray">You'll soon hear more about our plans and projects, but for now we have to tell you about our future games for this year:</h4>
 
@@ -41,7 +41,7 @@ We hope to start development on <span style="font-weight: bold;">Never Die</span
   <img src="/images/blog/first-blog/image2.png" style="width: 100%; object-fit: cover" alt="Texto Alternativo">
 </p>
 
-<h3>The Adventures Of John And Mark</h3>
+### The Adventures Of John And Mark
 
 Now talking about [The Adventures Of John And Mark](https://www.roblox.com/games/14108196267), we're working on an update, and we hope to release it on <span style="font-weight: bold;">January 20th</span>.
 
@@ -63,7 +63,7 @@ We want to thank everyone who made <span style="font-weight: bold;">Fanart</span
   <img src="/images/blog/first-blog/image3.png" style="width: 100%; object-fit: cover" alt="Texto Alternativo">
 </p>
 
-<h3>Treacherous Tower</h3>
+### Treacherous Tower
 
 Some time ago we commented on [Treacherous Tower](https://www.roblox.com/games/4237861040), but now I'm more openly announcing that the game <span style="font-weight: bold;">will no longer have updates</span>, only <span style="font-weight: bold; text-decoration: underline;">bug fixes</span>.
 

@@ -67,37 +67,25 @@ export default function Home ({ posts, featuredPost }) {
     const [workerInformationVisible, setWorkerInformationVisible] = useState(false);
 
 	function changeWorker(worker) {
-		console.log(worker)
-
 		if (worker.title) {
 			setWorkerName(worker.title);
 			setSelectedPost(worker.title);
-		} else {
-			console.log(`Title não encontrado no item`);
 		}
 
 		if (worker.roles) {
 			setWorkerRole(worker.roles);
-		} else {
-			console.log(`Roles não encontrado no item`);
 		}
 
 		if (worker.description) {
 			setWorkerDescription(worker.description);
-		} else {
-			console.log(`Description não encontrado no item`);
 		}
 
 		if (worker["roblox-character"]) {
 			setWorkerRobloxCharacter(worker["roblox-character"]);
-		} else {
-			console.log(`Roblox Id não encontrado no item`);
 		}
 
 		if (worker) {
 			setWorkerSocialMedia(worker);
-		} else {
-			console.log(`Social media não encontrado no item`);
 		}
 
         toggleWorkerInformation()
@@ -165,7 +153,7 @@ export default function Home ({ posts, featuredPost }) {
 		clearInterval(scrollInterval.current);
 		scrollInterval.current = setInterval(() => {
 		setCurrentIndex(prevIndex => (prevIndex + 1) % 2); // Assumindo 2 elementos
-		}, 5000); // Muda o item a cada 5 segundos
+		}, 8000); // Muda o item a cada 5 segundos
 	};
 	
 	useEffect(() => {
@@ -256,7 +244,7 @@ export default function Home ({ posts, featuredPost }) {
 						<SocialMedia />
 					</div>
 					
-					<div className='absolute w-fit bottom-0 right-0 left-0 mx-auto gap-0 space-x-3 flex items-center flex-row mb-6 z-50'>
+					<div className='absolute w-fit bottom-0 right-0 left-0 mx-auto gap-0 space-x-3 flex items-center flex-row mb-6 z-20'>
 						<button className={`aspect-square rounded-full duration-200 ${currentIndex === 0 ? 'bg-main-blue h-4' : 'bg-white h-3'}`} onClick={() => handleButtonClick(0)}></button>
 						<button className={`aspect-square rounded-full duration-200 ${currentIndex === 1 ? 'bg-main-blue h-4' : 'bg-white h-3'}`} onClick={() => handleButtonClick(1)}></button>
 					</div>
@@ -264,10 +252,10 @@ export default function Home ({ posts, featuredPost }) {
 
 
 				{/* -- About */}
-				<div className='bg-primary'>
+				<div className='bg-secundary-white'>
 					<div className='w-10/12 mx-auto py-24'>
 						<div className='relative w-full h-fit duration-200 mx-auto mt-15'>
-							<a href='https://www.roblox.com/groups/4756258/Broken-Clock' target="_blank" className='relative h-48 w-full block bg-bc-logo-name bg-contain bg-center bg-no-repeat left-0 right-0 mx-auto sm:w-96'></a>
+							<a href='https://www.roblox.com/groups/4756258/Broken-Clock' target="_blank" className='relative h-48 w-full block bg-bc-logo-name-black bg-contain bg-center bg-no-repeat left-0 right-0 mx-auto sm:w-96'></a>
 
 							<h1 className="font-black text-5xl text-center text-secundary uppercase mt-4">
 								Who we are?
@@ -285,8 +273,8 @@ export default function Home ({ posts, featuredPost }) {
 					</div>
 				</div>
 
-				{/* Latest Blog */}
-				<div className='featured-post-bg z-10 relative overflow-hidden bg-secundary-white bg-cover before:absolute before:w-full before:h-full before:bg-latest-blog before:bg-center before:bg-no-repeat before:opacity-10 before:blur-[10px] before:-z-10'>				
+				{/* Featured News */}
+				<div className='featured-post-bg z-10 relative overflow-hidden bg-primary bg-cover before:absolute before:w-full before:h-full before:bg-latest-blog before:bg-center before:bg-no-repeat before:opacity-10 before:blur-[10px] before:-z-10'>				
 					<div className='w-10/12 mx-auto py-24'>
 						<div className="pb-10">
 							<h1 className="uppercase text-secundary font-black text-5xl pb-2">Featured content</h1>
@@ -323,7 +311,7 @@ export default function Home ({ posts, featuredPost }) {
 
 				{/* Games */}
 				<span id='games'></span>
-				<div className='bg-primary'>
+				<div className='bg-secundary-white'>
 					<div className='w-10/12 mx-auto py-24'>
 						<div className="pb-10">
 							<h1 className="uppercase text-secundary font-black text-5xl pb-2">Our Games</h1>
@@ -393,7 +381,7 @@ export default function Home ({ posts, featuredPost }) {
 								</div>
 							</div>
 
-							{/* Never Die */}
+							{/* Mega Princess Castle Tycoon */}
 							<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 lg:w-1/3 max-w-2xl">
 								<div className="bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games">
 									<a className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
@@ -403,13 +391,39 @@ export default function Home ({ posts, featuredPost }) {
 										</div>
 
 										{/* Game cover */}
-										<div className=' bg-never-die bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110'>
+										<div className=' bg-mega-princess-castle-tycoon bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110'>
 											<div className='relative bg-game-shadow h-full w-full items-end sm:h-full'></div>
 										</div>
 									</a>
 									
 									<div className="w-full h-1/3">
-										<p className="text-secundary text-center text-2xl font-bold my-4 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis">Never Die</p>
+										<p className="text-secundary text-center text-2xl font-bold my-4 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis">Mega Princess Castle Tycoon</p>
+										<div className='w-5/6 mx-auto max-h-84'>			
+											<a className='group duration-200 bg-button-gray w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
+												<p className='uppercase mx-auto text-lg text-white text-center font-black px-2 my-2 min-[400px]:text-2xl'>Soon</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							{/* Ball Chase */}
+							<div className="w-full h-[400px] px-3 py-3 sm:w-1/2 lg:w-1/3 max-w-2xl">
+								<div className="bg-primary-white w-full h-full rounded-xl overflow-hidden shadow-games">
+									<a className="block relative w-full h-2/3 bg-secundary-white overflow-hidden">
+										{/* Year */}
+										<div className='absolute right-0 bottom-0 duration-200 bg-main-orange w-fit mr-6 mb-4 rounded-full flex items-center z-10 pointer-events-none'>
+											<p className='uppercase mx-auto text-base text-white text-center font-bold px-4 py-1'>2024</p>
+										</div>
+
+										{/* Game cover */}
+										<div className=' bg-ball-chase bg-cover bg-no-repeat bg-center duration-300 h-full hover:duration-300 hover:scale-110'>
+											<div className='relative bg-game-shadow h-full w-full items-end sm:h-full'></div>
+										</div>
+									</a>
+									
+									<div className="w-full h-1/3">
+										<p className="text-secundary text-center text-2xl font-bold my-4 w-full px-2 overflow-hidden whitespace-nowrap text-ellipsis">Ball Chase ⚪</p>
 										<div className='w-5/6 mx-auto max-h-84'>			
 											<a className='group duration-200 bg-button-gray w-fit min-w-[180px] mx-auto rounded-full flex items-center hover:shadow-button hover:duration-200 hover:transition-all'>
 												<p className='uppercase mx-auto text-lg text-white text-center font-black px-2 my-2 min-[400px]:text-2xl'>Soon</p>
@@ -423,7 +437,7 @@ export default function Home ({ posts, featuredPost }) {
 				</div>
 
 				{/* Team */}
-				<div className='relative bg-secundary-white'>
+				<div className='relative bg-primary'>
 					<div className='w-10/12 mx-auto py-24'>
 						<div className="pb-10">
 							<h1 className="uppercase text-secundary font-black text-5xl pb-2">The Team</h1>
@@ -433,7 +447,7 @@ export default function Home ({ posts, featuredPost }) {
 						<div className="w-full h-fit sm:flex">
 							<div className='w-full h-fit flex flex-wrap sm:w-1/2 sm:min-h-0'>
 								{[...posts].sort((a, b) => a.frontMatter.order - b.frontMatter.order).map((post) => (
-									<div className="w-32 h-32 sm:h-40 m-4 sm:w-40" key={post.frontMatter.title}>
+									<div className="w-32 h-32 sm:h-40 m-2 sm:w-40 sm:m-4" key={post.frontMatter.title}>
 										<button onClick={() => changeWorker(post.frontMatter)} className={`absolute bg-primary w-32 h-32 rounded-xl overflow-hidden shadow-games sm:w-40 sm:h-40 ${selectedPost === post.frontMatter.title ? 'sm:outline outline-4 sm:outline-main-blue' : ''}`} key={post.frontMatter.title}>
 											{/* ... restante do seu código ... */}
 											<div className="block relative w-full h-full bg-secundary-white overflow-hidden">
@@ -456,7 +470,7 @@ export default function Home ({ posts, featuredPost }) {
 							</div>
 							
 							<div className={`absolute w-full h-full left-0 top-0 z-10 before:absolute before:h-full before:w-full before:bg-secundary before:opacity-50 before:-z-10 sm:before:hidden sm:w-1/2 sm:relative sm:h-fit sm:block ${workerInformationVisible ? 'block' : 'hidden'}`}>
-								<div className="absolute bg-secundary-white w-1/2 mx-auto right-0 left-0 top-1/2 -translate-y-1/2 p-6 rounded-xl min-w-[250px] sm:min-w-0 sm:relative sm:w-full sm-p-0 sm:right-auto sm:left-auto sm:mx-0 sm:translate-y-0 sm:top-0 sm:bg-transparent">
+								<div className="absolute bg-primary w-1/2 mx-auto right-0 left-0 top-1/2 -translate-y-1/2 p-6 rounded-xl min-w-[250px] sm:min-w-0 sm:relative sm:w-full sm-p-0 sm:right-auto sm:left-auto sm:mx-0 sm:translate-y-0 sm:top-0 sm:bg-transparent">
 									<button onClick={ toggleWorkerInformation } className="h-16 w-16 absolute right-0 top-0 text-4xl font-bold text-secundary sm:hidden">X</button>
 									<div className="block w-full h-64 -z-10 mx-auto sm:h-96 sm:w-64 sm:absolute">
 										<img

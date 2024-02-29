@@ -44,7 +44,8 @@ module.exports = {
         // Games
         'john-and-mark': "url('../public/images/games/john-and-mark.png')",
         'treacherous-tower': "url('../public/images/games/treacherous-tower.png')",
-        'never-die': "url('../public/images/games/never-die.png')",
+        'ball-chase': "url('../public/images/games/ball-chase.png')",
+        'mega-princess-castle-tycoon': "url('../public/images/games/mega-princess-castle-tycoon.png')",
 
         // Logos
         'bc-logo': "url('../public/images/broken-clock-logo.png')",
@@ -68,6 +69,7 @@ module.exports = {
         'contact': "url('../public/images/contact.png')",
 
         // Others
+        '404': "url('../public/images/404-bg.png')",
         'john-and-mark-logo-name': "url('../public/images/home/john-and-mark-logo-name.png')",
         'menu-button': "url('../public/images/menu-button.svg')",
       },
