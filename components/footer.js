@@ -74,7 +74,7 @@ export default function Footer () {
                     </li>
                 </ul>
 
-                <p className='relative block w-full text-center pb-2 mt-12 text-secundary-white opacity-75 text-base font-normal'>&copy; 2023 Broken Clock All rights reserved.</p>
+                <p className='relative block w-full text-center pb-2 mt-12 text-secundary-white opacity-75 text-base font-normal'>&copy; 2024 Broken Clock All rights reserved.</p>
 
             </div>
 
